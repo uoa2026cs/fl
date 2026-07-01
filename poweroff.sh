@@ -1,0 +1,1 @@
+vastai stop instance "${VAST_CONTAINERLABEL:2}"
