@@ -1,0 +1,214 @@
+Using SuperLink: local (127.0.0.1:39093)
+[92mINFO [0m:      Starting Flower Simulation
+[93mWARNING [0m:   Since flwr 1.32, default simulated SuperNodes changed from 10 to 2.
+[92mINFO [0m:      Federation `@none/default` (10 simulated SuperNodes)
+[92mINFO [0m:      To change federation size, use the following command:
+[92mINFO [0m:      	flwr federation simulation-config @none/default <superlink> --num-supernodes <N>
+[92mINFO [0m:      No non-`flwr` dependencies found in pyproject.toml. Proceeding with isolated runtime environment creation.
+[92mINFO [0m:      Created env for run in: /root/.flwr/runtime-envs/9797921324953363622
+[92mINFO [0m:      Installing application dependencies...
+[92mINFO [0m:      No additional application dependencies needed installation.
+[92mINFO [0m:      App dependencies installed successfully via uv sync.
+run_config: {'tune_layers': -1, 'num_rounds': 15, 'delta': 1e-05, 'learning_rate': 0.0001, 'batch_size': 32, 'max_grad_norm': 1e+90, 'noise_multiplier': 0, 'random_seed': 0}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]Loading weights: 100%|██████████| 100/100 [00:00<00:00, 10513.09it/s]
+[transformers] [1mDistilBertForSequenceClassification LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     | 
+------------------------+------------+-
+vocab_projector.bias    | UNEXPECTED | 
+vocab_transform.bias    | UNEXPECTED | 
+vocab_layer_norm.weight | UNEXPECTED | 
+vocab_transform.weight  | UNEXPECTED | 
+vocab_layer_norm.bias   | UNEXPECTED | 
+pre_classifier.bias     | MISSING    | 
+pre_classifier.weight   | MISSING    | 
+classifier.weight       | MISSING    | 
+classifier.bias         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[93mWARNING [0m:   fraction_evaluate is set to 0.0. Federated evaluation will be skipped.
+[92mINFO [0m:      Starting FedAvg strategy:
+[92mINFO [0m:      	├── Number of rounds: 15
+[92mINFO [0m:      	├── ArrayRecord (255.44 MB)
+[92mINFO [0m:      	├── ConfigRecord (train): (empty!)
+[92mINFO [0m:      	├── ConfigRecord (evaluate): (empty!)
+[92mINFO [0m:      	├──> Sampling:
+[92mINFO [0m:      	│	├──Fraction: train (1.00) | evaluate ( 0.00)
+[92mINFO [0m:      	│	├──Minimum nodes: train (2) | evaluate (0)
+[92mINFO [0m:      	│	└──Minimum available nodes: 2
+[92mINFO [0m:      	└──> Keys in records:
+[92mINFO [0m:      		├── Weighted by: 'num-examples'
+[92mINFO [0m:      		├── ArrayRecord key: 'arrays'
+[92mINFO [0m:      		└── ConfigRecord key: 'config'
+[92mINFO [0m:      
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      Initial global evaluation results: {'accuracy': 0.083, 'loss': 1.8321590200066566}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 1/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.387, 'loss': 1.671649843454361}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 2/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.36, 'loss': 1.5972440019249916}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 3/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3475, 'loss': 1.5682703331112862}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 4/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3475, 'loss': 1.5583114549517632}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 5/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3475, 'loss': 1.5529503524303436}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 6/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3485, 'loss': 1.5502613261342049}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 7/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3475, 'loss': 1.547916255891323}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 8/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3525, 'loss': 1.546201378107071}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 9/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.364, 'loss': 1.5445398837327957}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 10/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.36, 'loss': 1.5425908491015434}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 11/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.358, 'loss': 1.5411126464605331}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 12/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.383, 'loss': 1.5396922379732132}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 13/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.392, 'loss': 1.5379564464092255}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 14/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.376, 'loss': 1.536164976656437}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 15/15]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': inf, 'noise_multiplier': 0.0}
+[92mINFO [0m:      Global evaluation
+Total parameters count: 66,958,086 Trainable parameters count: 4,614
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3865, 'loss': 1.5346813201904297}
+[92mINFO [0m:      
+[92mINFO [0m:      Strategy execution finished in 395.70s
+[92mINFO [0m:      
+[92mINFO [0m:      Final results:
+[92mINFO [0m:      
+[92mINFO [0m:      	Global Arrays:
+[92mINFO [0m:      		ArrayRecord (255.438 MB)
+[92mINFO [0m:      	
+[92mINFO [0m:      	Aggregated ClientApp-side Train Metrics:
+[92mINFO [0m:      	{ 1: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  2: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  3: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  4: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  5: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  6: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  7: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  8: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  9: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  10: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  11: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  12: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  13: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  14: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'},
+[92mINFO [0m:      	  15: {'epsilon': 'inf', 'noise_multiplier': '0.0000e+00'}}
+[92mINFO [0m:      	
+[92mINFO [0m:      	Aggregated ClientApp-side Evaluate Metrics:
+[92mINFO [0m:      	{}
+[92mINFO [0m:      	
+[92mINFO [0m:      	ServerApp-side Evaluate Metrics:
+[92mINFO [0m:      	{ 0: {'accuracy': '8.3000e-02', 'loss': '1.8322e+00'},
+[92mINFO [0m:      	  1: {'accuracy': '3.8700e-01', 'loss': '1.6716e+00'},
+[92mINFO [0m:      	  2: {'accuracy': '3.6000e-01', 'loss': '1.5972e+00'},
+[92mINFO [0m:      	  3: {'accuracy': '3.4750e-01', 'loss': '1.5683e+00'},
+[92mINFO [0m:      	  4: {'accuracy': '3.4750e-01', 'loss': '1.5583e+00'},
+[92mINFO [0m:      	  5: {'accuracy': '3.4750e-01', 'loss': '1.5530e+00'},
+[92mINFO [0m:      	  6: {'accuracy': '3.4850e-01', 'loss': '1.5503e+00'},
+[92mINFO [0m:      	  7: {'accuracy': '3.4750e-01', 'loss': '1.5479e+00'},
+[92mINFO [0m:      	  8: {'accuracy': '3.5250e-01', 'loss': '1.5462e+00'},
+[92mINFO [0m:      	  9: {'accuracy': '3.6400e-01', 'loss': '1.5445e+00'},
+[92mINFO [0m:      	  10: {'accuracy': '3.6000e-01', 'loss': '1.5426e+00'},
+[92mINFO [0m:      	  11: {'accuracy': '3.5800e-01', 'loss': '1.5411e+00'},
+[92mINFO [0m:      	  12: {'accuracy': '3.8300e-01', 'loss': '1.5397e+00'},
+[92mINFO [0m:      	  13: {'accuracy': '3.9200e-01', 'loss': '1.5380e+00'},
+[92mINFO [0m:      	  14: {'accuracy': '3.7600e-01', 'loss': '1.5362e+00'},
+[92mINFO [0m:      	  15: {'accuracy': '3.8650e-01', 'loss': '1.5347e+00'}}
+[92mINFO [0m:      
+[92mINFO [0m:      
