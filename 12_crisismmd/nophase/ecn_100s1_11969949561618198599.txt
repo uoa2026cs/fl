@@ -1,0 +1,2451 @@
+Using SuperLink: local (127.0.0.1:39091)
+[92mINFO [0m:      Starting Flower Simulation
+[93mWARNING [0m:   Since flwr 1.32, default simulated SuperNodes changed from 10 to 2.
+[92mINFO [0m:      Federation `@none/default` (10 simulated SuperNodes)
+[92mINFO [0m:      To change federation size, use the following command:
+[92mINFO [0m:      	flwr federation simulation-config @none/default <superlink> --num-supernodes <N>
+[92mINFO [0m:      No non-`flwr` dependencies found in pyproject.toml. Proceeding with isolated runtime environment creation.
+[92mINFO [0m:      Created env for run in: /root/.flwr/runtime-envs/11969949561618198599
+[92mINFO [0m:      Installing application dependencies...
+[92mINFO [0m:      uv sync took 0.1 seconds.
+[92mINFO [0m:      No additional application dependencies needed installation.
+[92mINFO [0m:      App dependencies installed successfully via uv sync.
+config: {'num_labels': 14, 'dataset': 'ec', 'tune_layers': 2, 'num_rounds': 200, 'delta': 1e-05, 'learning_rate': 0.001, 'batch_size': 32, 'max_grad_norm': 0.0001, 'noise_normal': 1, 'noise_multiplier': 1, 'random_seed': 1, 'normal_rounds': 180, 'dataset_multiplier': 1, 'subset': '6,7,8,9,10,11,12,13', 'nophase': True}
+2026-10-27 20:11:57,487	WARNING services.py:2213 -- WARNING: The object store is using /tmp/ray instead of /dev/shm because /dev/shm has only 7516192768 bytes available. This will harm performance! You may be able to free up space by deleting files in /dev/shm. If you are inside a Docker container, you can increase /dev/shm size by passing '--shm-size=9.62gb' to 'docker run' (or add it to the run_options list in a Ray cluster config). Make sure to set this to more than 30% of available RAM.
+Total parameters count: 66,964,238 Trainable parameters count: 14,777,102
+[93mWARNING [0m:   fraction_evaluate is set to 0.0. Federated evaluation will be skipped.
+[92mINFO [0m:      Starting FedAvg strategy:
+[92mINFO [0m:      	├── Number of rounds: 200
+[92mINFO [0m:      	├── ArrayRecord (255.46 MB)
+[92mINFO [0m:      	├── ConfigRecord (train): (empty!)
+[92mINFO [0m:      	├── ConfigRecord (evaluate): (empty!)
+[92mINFO [0m:      	├──> Sampling:
+[92mINFO [0m:      	│	├──Fraction: train (1.00) | evaluate ( 0.00)
+[92mINFO [0m:      	│	├──Minimum nodes: train (2) | evaluate (0)
+[92mINFO [0m:      	│	└──Minimum available nodes: 2
+[92mINFO [0m:      	└──> Keys in records:
+[92mINFO [0m:      		├── Weighted by: 'num-examples'
+[92mINFO [0m:      		├── ArrayRecord key: 'arrays'
+[92mINFO [0m:      		└── ConfigRecord key: 'config'
+[92mINFO [0m:      
+[92mINFO [0m:      Initial global evaluation results: {'accuracy': 0.0290299740382346, 'loss': 2.6531171377801885, 'sub ac': 0.0013410818059901655, 'sub ls': 2.631500436836553}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 1/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 1.1549252519887023, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.22681142317677602, 'loss': 2.307105364426988, 'sub ac': 0.37729101475189986, 'sub ls': 2.262928791753831}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 2/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 1.437487877882797, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.36039650696247344, 'loss': 2.1621261125807214, 'sub ac': 0.3763969602145731, 'sub ls': 2.101604481280569}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 3/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 1.664496252969027, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3615765872079301, 'loss': 2.0482166502761032, 'sub ac': 0.3763969602145731, 'sub ls': 1.982043762104715}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 4/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 1.8628948447900617, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3625206514042955, 'loss': 1.8949928945433792, 'sub ac': 0.3763969602145731, 'sub ls': 1.8218144820532631}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 5/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 2.0425270294576188, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3778616945952325, 'loss': 1.7630000939368076, 'sub ac': 0.3763969602145731, 'sub ls': 1.6982592572897313}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 6/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 2.208460674661778, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.3632286995515695, 'loss': 1.691640531113611, 'sub ac': 0.3750558784085829, 'sub ls': 1.6323513070227154}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 7/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 2.363767138763839, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.36653292423884826, 'loss': 1.649594861774026, 'sub ac': 0.37997317836388017, 'sub ls': 1.596218558470479}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 8/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 2.510493777072434, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.39674297852253954, 'loss': 1.6162697218318072, 'sub ac': 0.38176128743853377, 'sub ls': 1.5674113962977498}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 9/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 2.6500938693190474, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.38753835260797737, 'loss': 1.5878702208262614, 'sub ac': 0.38399642378185067, 'sub ls': 1.5450982906800272}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 10/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 2.783646356985781, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.404767524191645, 'loss': 1.560564927512361, 'sub ac': 0.38936075100581136, 'sub ls': 1.5172257182530968}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 11/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 2.911979779329753, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.4458343167335379, 'loss': 1.5375938370510855, 'sub ac': 0.40143048725972286, 'sub ls': 1.498817331299592}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 12/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.035747521948804, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.4581071512862875, 'loss': 1.5171137763161353, 'sub ac': 0.41350022351363436, 'sub ls': 1.4828738373307495}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 13/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.1554760850463546, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.467547793249941, 'loss': 1.497487516765581, 'sub ac': 0.42914617791685294, 'sub ls': 1.4695551628825598}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 14/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.2715972369047557, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.47226811423176773, 'loss': 1.4716897311288286, 'sub ac': 0.4362986142154671, 'sub ls': 1.4518529093047046}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 15/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.3844704831538635, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.48265282039178664, 'loss': 1.4453134156353833, 'sub ac': 0.4506034868126956, 'sub ls': 1.4325958459996517}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 16/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.4943990049072178, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.49303752655180555, 'loss': 1.427560871098158, 'sub ac': 0.4680375502905677, 'sub ls': 1.4180330328500106}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 17/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.6016413016347943, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5123908425772953, 'loss': 1.4004936690934853, 'sub ac': 0.5015645954403218, 'sub ls': 1.3818148935699122}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 18/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.7064199797242185, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5152230351663913, 'loss': 1.3877189569606065, 'sub ac': 0.5105051408135897, 'sub ls': 1.374552556644554}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 19/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.808928350972329, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5192353080009441, 'loss': 1.3766031190981582, 'sub ac': 0.5154224407688869, 'sub ls': 1.3629780403993255}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 20/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 3.909335591868941, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5241916450318622, 'loss': 1.3656695602017246, 'sub ac': 0.5198927134555208, 'sub ls': 1.3527754560665834}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 21/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.007790779814613, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5237196129336795, 'loss': 1.3795940884447673, 'sub ac': 0.5158694680375503, 'sub ls': 1.373506147839099}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 22/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.104426051036532, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.532452206750059, 'loss': 1.3770210161675027, 'sub ac': 0.5310683951721055, 'sub ls': 1.3634127879920792}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 23/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.199359267079123, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5409487845173472, 'loss': 1.3823127935651285, 'sub ac': 0.546714349575324, 'sub ls': 1.3630053162521478}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 24/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.292695993039666, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.547085201793722, 'loss': 1.4022196611481397, 'sub ac': 0.5552078676799285, 'sub ls': 1.3733903478179919}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 25/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.384531311375151, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5489733301864527, 'loss': 1.421883364963959, 'sub ac': 0.5574430040232454, 'sub ls': 1.3765275773588546}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 26/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.474951135908794, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5522775548737314, 'loss': 1.4452974847501423, 'sub ac': 0.5619132767098793, 'sub ls': 1.3772921479062732}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 27/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.564033519660534, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5525135709228227, 'loss': 1.473180094726361, 'sub ac': 0.5619132767098793, 'sub ls': 1.383147801999061}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 28/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.651849518024175, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5567618598064669, 'loss': 1.4921221329070273, 'sub ac': 0.5686186857398301, 'sub ls': 1.3810275652923378}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 29/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.738464103761967, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5577059240028321, 'loss': 1.51929279473246, 'sub ac': 0.5699597675458203, 'sub ls': 1.3920935932205467}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 30/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.82393684087357, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5593580363464715, 'loss': 1.5478744646387053, 'sub ac': 0.5708538220831471, 'sub ls': 1.4167325092736875}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 31/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.908322534231035, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5621902289355676, 'loss': 1.5641347580370206, 'sub ac': 0.575324094769781, 'sub ls': 1.4167328400967854}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 32/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 4.9916717121177765, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5640783573282984, 'loss': 1.5937879207647998, 'sub ac': 0.5775592311130979, 'sub ls': 1.4330584010643037}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 33/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.074031081909673, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5669105499173944, 'loss': 1.6434520602592015, 'sub ac': 0.5820295037997317, 'sub ls': 1.459716405514686}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 34/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.155443934009461, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5692707104083078, 'loss': 1.6825130143929743, 'sub ac': 0.5864997764863656, 'sub ls': 1.4573255128822105}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 35/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.235950492784659, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5687986783101251, 'loss': 1.7490764739014277, 'sub ac': 0.583370585605722, 'sub ls': 1.4966464253691194}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 36/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.31558818011904, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5704507906537645, 'loss': 1.7777949874064032, 'sub ac': 0.5869468037550291, 'sub ls': 1.505124868001584}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 37/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.394391924088942, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5735189992919518, 'loss': 1.8300197383888719, 'sub ac': 0.589181940098346, 'sub ls': 1.5519470104853597}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 38/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.472394331754282, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5728109511446778, 'loss': 1.9023544682009141, 'sub ac': 0.5896289673670094, 'sub ls': 1.5754087083191546}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 39/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.549625967930683, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5751711116355912, 'loss': 1.9662658283106695, 'sub ac': 0.5909700491729996, 'sub ls': 1.6099802907364784}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 40/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.626115475972772, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5768232239792306, 'loss': 2.0259264591929202, 'sub ac': 0.5918641037103264, 'sub ls': 1.6552144951408976}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 41/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.701889757171825, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.579183384470144, 'loss': 2.052267715619762, 'sub ac': 0.5958873491282968, 'sub ls': 1.6648901264530023}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 42/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.776974126804302, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.581307528911966, 'loss': 2.0647778338859295, 'sub ac': 0.599463567277604, 'sub ls': 1.6704607952051413}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 43/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.851392448749903, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.582723625206514, 'loss': 2.089494676614725, 'sub ac': 0.6012516763522575, 'sub ls': 1.6941800938155644}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 44/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.925167180403328, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5841397215010621, 'loss': 2.154836828426733, 'sub ac': 0.6034868126955745, 'sub ls': 1.7756248622479907}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 45/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 5.998319623834404, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5836676894028794, 'loss': 2.196533820751227, 'sub ac': 0.6039338399642378, 'sub ls': 1.8039709201176677}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 46/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.07086986591808, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5843757375501534, 'loss': 2.2312549411448663, 'sub ac': 0.6039338399642378, 'sub ls': 1.8153528815462592}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 47/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.142836937112648, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5857918338447015, 'loss': 2.2343477132552803, 'sub ac': 0.6043808672329012, 'sub ls': 1.8421670430251196}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 48/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.2142389126082, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5862638659428842, 'loss': 2.228212139137742, 'sub ac': 0.605274921770228, 'sub ls': 1.8753920100232986}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 49/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.28509291386744, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5864998819919754, 'loss': 2.2515182414087507, 'sub ac': 0.6043808672329012, 'sub ls': 1.9289346574724493}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 50/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.355415234654932, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5867358980410667, 'loss': 2.265769925634057, 'sub ac': 0.6039338399642378, 'sub ls': 1.943612320805747}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 51/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.425221364046037, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5839037054519708, 'loss': 2.3161234816262426, 'sub ac': 0.5990165400089406, 'sub ls': 1.9867677377386184}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 52/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.494526065592115, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5841397215010621, 'loss': 2.3715638571931192, 'sub ac': 0.5999105945462673, 'sub ls': 2.052473764841611}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 53/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.563343370406323, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5857918338447015, 'loss': 2.3943318827748157, 'sub ac': 0.599463567277604, 'sub ls': 2.1121428536153766}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 54/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.631686679686925, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5872079301392494, 'loss': 2.444846630659142, 'sub ac': 0.6016987036209209, 'sub ls': 2.1721599802248277}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 55/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.699568858612999, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5848477696483361, 'loss': 2.481310065861212, 'sub ac': 0.5981224854716137, 'sub ls': 2.217066050748181}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 56/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.767002087640652, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5874439461883408, 'loss': 2.4970559625938473, 'sub ac': 0.6012516763522575, 'sub ls': 2.2868845883788516}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 57/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.83399809013304, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5879159782865235, 'loss': 2.553444060396974, 'sub ac': 0.6021457308895842, 'sub ls': 2.390001924537792}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 58/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.900568074251686, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5919282511210763, 'loss': 2.5678022527345825, 'sub ac': 0.6057219490388914, 'sub ls': 2.4268562408979313}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 59/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 6.966722738044407, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5978286523483597, 'loss': 2.616170855268488, 'sub ac': 0.607510058113545, 'sub ls': 2.5216848103127205}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 60/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.032472386480734, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5947604437101723, 'loss': 2.7227870481093595, 'sub ac': 0.6066160035762181, 'sub ls': 2.606854840800013}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 61/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.097826858244015, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5964125560538116, 'loss': 2.7348158041598634, 'sub ac': 0.6070630308448816, 'sub ls': 2.66356077266688}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 62/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.162795679784079, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5990087325938164, 'loss': 2.7903315895482113, 'sub ac': 0.6061689763075547, 'sub ls': 2.7632900181763076}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 63/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.227387874193622, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5964125560538116, 'loss': 2.822558056613255, 'sub ac': 0.6021457308895842, 'sub ls': 2.7970041591352683}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 64/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.291612236713129, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.5983006844465424, 'loss': 2.8940920079123, 'sub ac': 0.6034868126955745, 'sub ls': 2.882112178197118}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 65/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.355477122611695, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6001888128392731, 'loss': 2.8937872611381885, 'sub ac': 0.6034868126955745, 'sub ls': 2.920859186362623}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 66/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.418990690808255, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6034930375265518, 'loss': 2.94347825454377, 'sub ac': 0.6030397854269111, 'sub ls': 3.0147270847230176}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 67/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.4821606546003485, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6013688930847297, 'loss': 3.037963193740827, 'sub ac': 0.6008046490835941, 'sub ls': 3.1045522404185992}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 68/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.544994596410643, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6020769412320037, 'loss': 3.067145091226311, 'sub ac': 0.6003576218149307, 'sub ls': 3.140218111463674}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 69/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.607499686874092, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6065612461647392, 'loss': 3.092404471103217, 'sub ac': 0.6048278945015646, 'sub ls': 3.1973519178176493}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 70/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.669682930796684, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6093934387538352, 'loss': 3.1157252154373913, 'sub ac': 0.6061689763075547, 'sub ls': 3.2466268194110786}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 71/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.731551040995805, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6101014869011093, 'loss': 3.1631351301685267, 'sub ac': 0.6034868126955745, 'sub ls': 3.2631754263416166}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 72/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.793110551556175, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6103375029502006, 'loss': 3.179802132688211, 'sub ac': 0.6057219490388914, 'sub ls': 3.291789421930769}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 73/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.854367746385812, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6098654708520179, 'loss': 3.1696168068081585, 'sub ac': 0.5967814036656236, 'sub ls': 3.2962881735408205}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 74/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.915328650659185, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.61552985603021, 'loss': 3.1391258190227957, 'sub ac': 0.6039338399642378, 'sub ls': 3.3067670156234175}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 75/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 7.9759991649342785, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6185980646683974, 'loss': 3.1722203574992025, 'sub ac': 0.605274921770228, 'sub ls': 3.336664004575263}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 76/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.036384947741473, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6181260325702148, 'loss': 3.2228139103485893, 'sub ac': 0.6039338399642378, 'sub ls': 3.3560120945377547}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 77/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.096491484443707, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6211942412084022, 'loss': 3.209195162008077, 'sub ac': 0.6066160035762181, 'sub ls': 3.3590857924016713}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 78/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.156324106951399, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6204861930611282, 'loss': 3.229578263528341, 'sub ac': 0.6008046490835941, 'sub ls': 3.3893185778819506}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 79/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.215888001282268, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6204861930611282, 'loss': 3.234159946779274, 'sub ac': 0.6021457308895842, 'sub ls': 3.4019290402258515}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 80/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.275188078553011, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6226103375029503, 'loss': 3.1905767631215647, 'sub ac': 0.6034868126955745, 'sub ls': 3.3604592769658614}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 81/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.334229210893811, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6263865942884116, 'loss': 3.177683758459931, 'sub ac': 0.6048278945015646, 'sub ls': 3.401979687707361}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 82/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.393016129869453, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6299268350247816, 'loss': 3.204969040143875, 'sub ac': 0.6070630308448816, 'sub ls': 3.435466097890132}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 83/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.451553327185577, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6282747226811424, 'loss': 3.2195026612883897, 'sub ac': 0.607510058113545, 'sub ls': 3.4281479789041547}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 84/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.509845260668582, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6289827708284164, 'loss': 3.204006786585023, 'sub ac': 0.6057219490388914, 'sub ls': 3.455557010191916}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 85/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.567896143233186, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6270946424356856, 'loss': 3.1848598148903253, 'sub ac': 0.6021457308895842, 'sub ls': 3.4279972932463414}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 86/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.625710228994368, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.627330658484777, 'loss': 3.1729793494564196, 'sub ac': 0.605274921770228, 'sub ls': 3.432692962189471}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 87/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.683291502347965, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6299268350247816, 'loss': 3.1793959804208094, 'sub ac': 0.6070630308448816, 'sub ls': 3.4329660864989036}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 88/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.740643908856407, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6296908189756903, 'loss': 3.2185515898253687, 'sub ac': 0.6066160035762181, 'sub ls': 3.4633010792636316}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 89/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.797771259075997, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6313429313193297, 'loss': 3.184464122204109, 'sub ac': 0.6066160035762181, 'sub ls': 3.490019554850988}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 90/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.854677306731855, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6320509794666037, 'loss': 3.1923995334246205, 'sub ac': 0.6070630308448816, 'sub ls': 3.4746768083431703}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 91/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.911365620799671, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.628038706632051, 'loss': 3.2419876835102572, 'sub ac': 0.6034868126955745, 'sub ls': 3.474105441042713}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 92/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 8.96783973426503, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6318149634175124, 'loss': 3.202772800894821, 'sub ac': 0.6061689763075547, 'sub ls': 3.482664608774198}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 93/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.024103039411491, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6311069152702383, 'loss': 3.2169217750489896, 'sub ac': 0.6061689763075547, 'sub ls': 3.4789509523858118}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 94/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.08015888442516, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6325230115647864, 'loss': 3.159407164821485, 'sub ac': 0.605274921770228, 'sub ls': 3.449243889144877}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 95/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.136010531736597, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6355912202029738, 'loss': 3.1276667074744138, 'sub ac': 0.6092981671881985, 'sub ls': 3.387481513809934}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 96/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.191661129156612, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6360632523011565, 'loss': 3.18239938332164, 'sub ac': 0.6124273580688422, 'sub ls': 3.4282105181118077}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 97/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.247113716936415, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6384234127920698, 'loss': 3.195660057004848, 'sub ac': 0.6160035762181493, 'sub ls': 3.451250991173285}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 98/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.30237137238784, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6384234127920698, 'loss': 3.182557666698435, 'sub ac': 0.613321412606169, 'sub ls': 3.4242143149241624}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 99/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.357436980332523, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6400755251357092, 'loss': 3.1637815989102007, 'sub ac': 0.6137684398748323, 'sub ls': 3.460650236413689}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 100/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.412313363615963, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6386594288411612, 'loss': 3.1671127281522087, 'sub ac': 0.6128743853375056, 'sub ls': 3.402125162901386}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 101/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.467003339230342, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6407835732829832, 'loss': 3.1509218501797087, 'sub ac': 0.613321412606169, 'sub ls': 3.4470191106340105}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 102/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.521509592582925, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6391314609393439, 'loss': 3.185567499754534, 'sub ac': 0.6115333035315155, 'sub ls': 3.4629730238251564}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 103/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.575834829625139, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6396034930375265, 'loss': 3.164022125611475, 'sub ac': 0.6146624944121591, 'sub ls': 3.4277485390033475}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 104/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.629981578036341, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6405475572338919, 'loss': 3.1983856487476743, 'sub ac': 0.6146624944121591, 'sub ls': 3.4642710764598887}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 105/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.683952407648711, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6410195893320746, 'loss': 3.1738760792649185, 'sub ac': 0.6164506034868127, 'sub ls': 3.4515951358691144}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 106/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.73774969549297, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.643379749822988, 'loss': 3.181016269708147, 'sub ac': 0.6177916852928028, 'sub ls': 3.4548294995051707}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 107/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.791375946392263, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6452678782157186, 'loss': 3.157088742718709, 'sub ac': 0.6186857398301296, 'sub ls': 3.405083263671766}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 108/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.844833496883492, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6450318621666273, 'loss': 3.171223894559974, 'sub ac': 0.6195797943674564, 'sub ls': 3.4562907971385126}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 109/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.898124602479907, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.64550389426481, 'loss': 3.1428692493344186, 'sub ac': 0.6186857398301296, 'sub ls': 3.462795639549668}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 110/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 9.951251553314046, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6450318621666273, 'loss': 3.1645450965677875, 'sub ac': 0.6191327670987931, 'sub ls': 3.4274132378569235}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 111/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.004216438482326, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6452678782157186, 'loss': 3.1318246491652544, 'sub ac': 0.6177916852928028, 'sub ls': 3.412441500926796}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 112/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.05702162882173, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6431437337738967, 'loss': 3.167779877018698, 'sub ac': 0.6151095216808226, 'sub ls': 3.4934546650122145}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 113/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.109669014529477, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6443238140193533, 'loss': 3.202208564223505, 'sub ac': 0.6173446580241395, 'sub ls': 3.5089322969643835}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 114/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.162160750581696, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.64550389426481, 'loss': 3.171283693113275, 'sub ac': 0.6177916852928028, 'sub ls': 3.489753871503343}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 115/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.214498809616172, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6452678782157186, 'loss': 3.1593837175330997, 'sub ac': 0.6173446580241395, 'sub ls': 3.493194233907564}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 116/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.266685215443866, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.646211942412084, 'loss': 3.1638229294489486, 'sub ac': 0.6191327670987931, 'sub ls': 3.519157413078516}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 117/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.31872174881554, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6478640547557234, 'loss': 3.1262326252919084, 'sub ac': 0.62136790344211, 'sub ls': 3.4188258648984498}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 118/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.370610485830783, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.646919990559358, 'loss': 3.1016223773321565, 'sub ac': 0.6191327670987931, 'sub ls': 3.3956967124887805}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 119/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.422353138658545, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6497521831484541, 'loss': 3.080173409601301, 'sub ac': 0.6222619579794367, 'sub ls': 3.404738140148833}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 120/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.473951556127508, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6464479584611753, 'loss': 3.121563829733061, 'sub ac': 0.6177916852928028, 'sub ls': 3.40572675296543}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 121/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.52540751606165, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6499881991975455, 'loss': 3.090065448104646, 'sub ac': 0.6204738489047832, 'sub ls': 3.3738648385195846}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 122/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.57672275614795, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6478640547557234, 'loss': 3.125601997402498, 'sub ac': 0.6182387125614662, 'sub ls': 3.382146053459157}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 123/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.627898983695585, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6497521831484541, 'loss': 3.078674081420178, 'sub ac': 0.6200268216361198, 'sub ls': 3.3570498644266484}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 124/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.678937838947931, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6509322633939107, 'loss': 3.1140756370719096, 'sub ac': 0.6231560125167636, 'sub ls': 3.378423400046733}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 125/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.729840951104677, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6516403115411848, 'loss': 3.087891772020136, 'sub ac': 0.6222619579794367, 'sub ls': 3.392995957982929}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 126/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.780609904444903, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6499881991975455, 'loss': 3.0964699475754536, 'sub ac': 0.6200268216361198, 'sub ls': 3.3798739263187523}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 127/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.831246296116342, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6509322633939107, 'loss': 3.0940933821756715, 'sub ac': 0.6231560125167636, 'sub ls': 3.4018269838581245}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 128/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.881751725745852, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6490441350011801, 'loss': 3.14225767962573, 'sub ac': 0.6209208761734466, 'sub ls': 3.4189460901048068}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 129/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.932127532791144, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6511682794430022, 'loss': 3.0985533998123396, 'sub ac': 0.6222619579794367, 'sub ls': 3.355982555786733}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 130/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 10.982375396998664, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6492801510502714, 'loss': 3.1208167023216467, 'sub ac': 0.6218149307107733, 'sub ls': 3.4068125902567266}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 131/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.032496618178087, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6570686806702856, 'loss': 3.082148825866253, 'sub ac': 0.6312025033527046, 'sub ls': 3.4111378464679607}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 132/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.082492732133607, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6497521831484541, 'loss': 3.144905867316629, 'sub ac': 0.6222619579794367, 'sub ls': 3.4193063922689384}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 133/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.132365048665172, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6535284399339155, 'loss': 3.0937530314103596, 'sub ac': 0.6253911488600805, 'sub ls': 3.400670530330298}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 134/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.182114975382985, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6556525843757376, 'loss': 3.0662196332451193, 'sub ac': 0.629414394278051, 'sub ls': 3.41049800731265}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 135/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.231743794404522, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6554165683266462, 'loss': 3.108768134514397, 'sub ac': 0.6276262852033974, 'sub ls': 3.4381235810758604}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 136/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.281252982801362, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6551805522775549, 'loss': 3.1510884485521604, 'sub ac': 0.6262852033974072, 'sub ls': 3.464917000884396}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 137/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.330643678413127, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6554165683266462, 'loss': 3.1549588550732386, 'sub ac': 0.6249441215914171, 'sub ls': 3.4794853357102755}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 138/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.37991719827668, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6547085201793722, 'loss': 3.1501112427665343, 'sub ac': 0.6240500670540903, 'sub ls': 3.4806809798382625}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 139/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.429074922322274, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6594288411611989, 'loss': 3.061853289969946, 'sub ac': 0.6267322306660706, 'sub ls': 3.448422660878795}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 140/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.478117876871734, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6549445362284635, 'loss': 3.130264925512188, 'sub ac': 0.6236030397854269, 'sub ls': 3.4672208171259573}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 141/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.527047464130973, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6551805522775549, 'loss': 3.152729841569473, 'sub ac': 0.6249441215914171, 'sub ls': 3.5094606086618407}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 142/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.575864729870899, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6558886004248289, 'loss': 3.1619363284656847, 'sub ac': 0.6267322306660706, 'sub ls': 3.512757907129048}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 143/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.624570850181223, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6561246164739202, 'loss': 3.1340902975378158, 'sub ac': 0.6262852033974072, 'sub ls': 3.4967755610568747}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 144/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.67316703439308, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6594288411611989, 'loss': 3.1354829744542014, 'sub ac': 0.6285203397407242, 'sub ls': 3.4784304755683664}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 145/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.72165435627703, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6584847769648337, 'loss': 3.1126704478224467, 'sub ac': 0.6267322306660706, 'sub ls': 3.4618615665018}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 146/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.770033990258943, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.660136889308473, 'loss': 3.114233252854175, 'sub ac': 0.6298614215467143, 'sub ls': 3.441124483363459}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 147/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.818306928678693, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6643851781921171, 'loss': 3.084057929241801, 'sub ac': 0.6352257487706751, 'sub ls': 3.43498420459541}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 148/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.866474312131816, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6634411139957517, 'loss': 3.083890321149504, 'sub ac': 0.6347787215020116, 'sub ls': 3.4099269998249433}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 149/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.9145371686002, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6636771300448431, 'loss': 3.043402354222636, 'sub ac': 0.6334376396960214, 'sub ls': 3.3823643881772636}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 150/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 11.962496570144035, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6627330658484777, 'loss': 3.0530359818740136, 'sub ac': 0.6320965578900313, 'sub ls': 3.416363187064323}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 151/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.010353476107323, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6634411139957517, 'loss': 3.076081567421707, 'sub ac': 0.6343316942333482, 'sub ls': 3.39680298322218}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 152/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.058108925183133, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6648572102902998, 'loss': 3.0289278977992597, 'sub ac': 0.6361198033080018, 'sub ls': 3.3793331200808994}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 153/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.10576391019668, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6646211942412084, 'loss': 3.048854287232828, 'sub ac': 0.6343316942333482, 'sub ls': 3.4211145613307554}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 154/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.153319331191328, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6681614349775785, 'loss': 3.049862802886783, 'sub ac': 0.6374608851139919, 'sub ls': 3.43096212558465}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 155/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.200776224895195, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6679254189284871, 'loss': 3.0165313448803532, 'sub ac': 0.6334376396960214, 'sub ls': 3.4050869095469354}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 156/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.248135495112178, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.665801274486665, 'loss': 3.0681484313345417, 'sub ac': 0.6338846669646848, 'sub ls': 3.4229737828765856}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 157/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.29539808922236, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6672173707812131, 'loss': 3.0618702026648092, 'sub ac': 0.6388019669199821, 'sub ls': 3.377130302084734}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 158/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.342564892899405, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.665801274486665, 'loss': 3.0239258487747334, 'sub ac': 0.6338846669646848, 'sub ls': 3.3929612232629456}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 159/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.389636804884336, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6672173707812131, 'loss': 3.0730362001499647, 'sub ac': 0.6374608851139919, 'sub ls': 3.414445226513279}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 160/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.43661467177403, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6665093226339391, 'loss': 3.0901059534911535, 'sub ac': 0.6352257487706751, 'sub ls': 3.455410016451662}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 161/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.483499390625816, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6648572102902998, 'loss': 3.1259311363610958, 'sub ac': 0.6338846669646848, 'sub ls': 3.475189101552132}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 162/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.530291853135918, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6674533868303044, 'loss': 3.0906588158462305, 'sub ac': 0.6383549396513187, 'sub ls': 3.4654442399646963}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 163/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.576992871359186, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.665093226339391, 'loss': 3.0653153618242426, 'sub ac': 0.6352257487706751, 'sub ls': 3.427506076367668}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 164/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.623603187223752, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6688694831248525, 'loss': 3.084898944392867, 'sub ac': 0.6379079123826553, 'sub ls': 3.4452426349365344}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 165/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.670123783326844, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6674533868303044, 'loss': 3.074065552586116, 'sub ac': 0.6352257487706751, 'sub ls': 3.4298577187154033}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 166/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.716555318625991, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6683974510266698, 'loss': 3.0635424265750095, 'sub ac': 0.6379079123826553, 'sub ls': 3.405988236223953}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 167/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.762898690883937, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6693415152230352, 'loss': 3.0902058401281103, 'sub ac': 0.6405900759946357, 'sub ls': 3.4520041014288068}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 168/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.809154608684741, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6693415152230352, 'loss': 3.078128662541533, 'sub ac': 0.6410371032632991, 'sub ls': 3.4479129980545147}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 169/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.85532390514391, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6709936275666746, 'loss': 3.0912822820624286, 'sub ac': 0.6423781850692892, 'sub ls': 3.43733302556781}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 170/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.90140722023148, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6707576115175832, 'loss': 3.0914778062299595, 'sub ac': 0.6405900759946357, 'sub ls': 3.467795689616504}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 171/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.947405410348141, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6721737078121313, 'loss': 3.0883101170035445, 'sub ac': 0.6437192668752794, 'sub ls': 3.4675329998768385}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 172/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 12.993319156964096, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6721737078121313, 'loss': 3.1030712447302617, 'sub ac': 0.6437192668752794, 'sub ls': 3.470212062448596}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 173/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.039149319743082, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6724097238612226, 'loss': 3.0699900513919762, 'sub ac': 0.6437192668752794, 'sub ls': 3.4342526455889018}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 174/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.084896399768795, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6721737078121313, 'loss': 3.0655380421886753, 'sub ac': 0.6423781850692892, 'sub ls': 3.414923165278292}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 175/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.130561210273477, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.672645739910314, 'loss': 3.075874679741894, 'sub ac': 0.6432722396066161, 'sub ls': 3.4221971671283913}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 176/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.176144346247304, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6709936275666746, 'loss': 3.085802775552483, 'sub ac': 0.6419311578006258, 'sub ls': 3.4530078562232176}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 177/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.221646665384524, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6707576115175832, 'loss': 3.090328766654228, 'sub ac': 0.6410371032632991, 'sub ls': 3.4461852317949893}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 178/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.267068761153482, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6698135473212179, 'loss': 3.07436661250979, 'sub ac': 0.6388019669199821, 'sub ls': 3.437447019704069}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 179/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.312411327502838, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6714656596648572, 'loss': 3.090653949563785, 'sub ac': 0.6388019669199821, 'sub ls': 3.4801977137982125}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 180/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.357674915768428, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6728817559594052, 'loss': 3.062303783929036, 'sub ac': 0.6419311578006258, 'sub ls': 3.4490029680766217}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 181/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.402860295343615, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6707576115175832, 'loss': 3.105756589031062, 'sub ac': 0.6405900759946357, 'sub ls': 3.4630244548799314}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 182/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.447968047234474, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6724097238612226, 'loss': 3.1160479138869284, 'sub ac': 0.6414841305319624, 'sub ls': 3.4832252175028855}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 183/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.492998778617839, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6728817559594052, 'loss': 3.0969694955522846, 'sub ac': 0.6423781850692892, 'sub ls': 3.4375326031278592}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 184/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.537953233903385, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6728817559594052, 'loss': 3.08691535627389, 'sub ac': 0.6432722396066161, 'sub ls': 3.4304797411711023}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 185/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.58283182861017, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6766580127448667, 'loss': 3.0798151305691377, 'sub ac': 0.6477425122932499, 'sub ls': 3.427494495853975}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 186/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.627635342847611, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6735898041066792, 'loss': 3.0959998718938766, 'sub ac': 0.6446133214126062, 'sub ls': 3.4232418484915885}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 187/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.672364350654325, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6731177720084965, 'loss': 3.090835690132593, 'sub ac': 0.6446133214126062, 'sub ls': 3.390218428644582}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 188/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.717019343890506, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6728817559594052, 'loss': 3.081737686672215, 'sub ac': 0.6450603486812696, 'sub ls': 3.4331177433100883}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 189/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.76160094353655, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6719376917630399, 'loss': 3.1167574363242125, 'sub ac': 0.6423781850692892, 'sub ls': 3.4506679436006236}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 190/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.8061096988276, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6717016757139486, 'loss': 3.1096380952677976, 'sub ac': 0.6432722396066161, 'sub ls': 3.420082898879616}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 191/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.850546292044806, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6750059004012273, 'loss': 3.088400831981062, 'sub ac': 0.6481895395619133, 'sub ls': 3.4209110650517442}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 192/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.894911116041634, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6735898041066792, 'loss': 3.0675546111772443, 'sub ac': 0.6446133214126062, 'sub ls': 3.3996628235640887}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 193/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.939204920327784, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6740618362048619, 'loss': 3.076418920088861, 'sub ac': 0.6441662941439428, 'sub ls': 3.4379835235363787}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 194/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 13.983428066342661, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.676894028793958, 'loss': 3.0846100492749766, 'sub ac': 0.6477425122932499, 'sub ls': 3.446667965789645}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 195/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 14.027581106154676, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6740618362048619, 'loss': 3.110101257767181, 'sub ac': 0.6446133214126062, 'sub ls': 3.45166869540805}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 196/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 14.07166472743281, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.676185980646684, 'loss': 3.078769548788424, 'sub ac': 0.6446133214126062, 'sub ls': 3.471270222295114}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 197/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 14.115679354171395, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6752419164503186, 'loss': 3.0993052066877707, 'sub ac': 0.6446133214126062, 'sub ls': 3.4655842702197988}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 198/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 14.159625472886558, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6747698843521359, 'loss': 3.10916188203813, 'sub ac': 0.6437192668752794, 'sub ls': 3.4699195704931225}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 199/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 14.203503733823162, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6778380929903234, 'loss': 3.098295284268539, 'sub ac': 0.6472954850245864, 'sub ls': 3.452566672927522}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 200/200]
+[92mINFO [0m:      configure_train: Sampled 10 nodes (out of 10)
+[92mINFO [0m:      aggregate_train: Received 10 results and 0 failures
+[92mINFO [0m:      	└──> Aggregated MetricRecord: {'epsilon': 14.24731434415863, 'noise_multiplier': 0.9999999999999999}
+[92mINFO [0m:      Global evaluation
+[92mINFO [0m:      	└──> MetricRecord: {'accuracy': 0.6759499645975926, 'loss': 3.076126783783773, 'sub ac': 0.6446133214126062, 'sub ls': 3.462650994823935}
+[92mINFO [0m:      
+[92mINFO [0m:      Strategy execution finished in 13757.22s
+[92mINFO [0m:      
+[92mINFO [0m:      Final results:
+[92mINFO [0m:      
+[92mINFO [0m:      	Global Arrays:
+[92mINFO [0m:      		ArrayRecord (255.461 MB)
+[92mINFO [0m:      	
+[92mINFO [0m:      	Aggregated ClientApp-side Train Metrics:
+[92mINFO [0m:      	{ 1: {'epsilon': '1.1549e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  2: {'epsilon': '1.4375e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  3: {'epsilon': '1.6645e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  4: {'epsilon': '1.8629e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  5: {'epsilon': '2.0425e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  6: {'epsilon': '2.2085e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  7: {'epsilon': '2.3638e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  8: {'epsilon': '2.5105e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  9: {'epsilon': '2.6501e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  10: {'epsilon': '2.7836e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  11: {'epsilon': '2.9120e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  12: {'epsilon': '3.0357e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  13: {'epsilon': '3.1555e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  14: {'epsilon': '3.2716e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  15: {'epsilon': '3.3845e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  16: {'epsilon': '3.4944e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  17: {'epsilon': '3.6016e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  18: {'epsilon': '3.7064e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  19: {'epsilon': '3.8089e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  20: {'epsilon': '3.9093e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  21: {'epsilon': '4.0078e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  22: {'epsilon': '4.1044e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  23: {'epsilon': '4.1994e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  24: {'epsilon': '4.2927e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  25: {'epsilon': '4.3845e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  26: {'epsilon': '4.4750e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  27: {'epsilon': '4.5640e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  28: {'epsilon': '4.6518e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  29: {'epsilon': '4.7385e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  30: {'epsilon': '4.8239e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  31: {'epsilon': '4.9083e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  32: {'epsilon': '4.9917e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  33: {'epsilon': '5.0740e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  34: {'epsilon': '5.1554e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  35: {'epsilon': '5.2360e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  36: {'epsilon': '5.3156e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  37: {'epsilon': '5.3944e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  38: {'epsilon': '5.4724e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  39: {'epsilon': '5.5496e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  40: {'epsilon': '5.6261e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  41: {'epsilon': '5.7019e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  42: {'epsilon': '5.7770e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  43: {'epsilon': '5.8514e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  44: {'epsilon': '5.9252e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  45: {'epsilon': '5.9983e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  46: {'epsilon': '6.0709e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  47: {'epsilon': '6.1428e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  48: {'epsilon': '6.2142e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  49: {'epsilon': '6.2851e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  50: {'epsilon': '6.3554e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  51: {'epsilon': '6.4252e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  52: {'epsilon': '6.4945e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  53: {'epsilon': '6.5633e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  54: {'epsilon': '6.6317e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  55: {'epsilon': '6.6996e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  56: {'epsilon': '6.7670e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  57: {'epsilon': '6.8340e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  58: {'epsilon': '6.9006e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  59: {'epsilon': '6.9667e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  60: {'epsilon': '7.0325e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  61: {'epsilon': '7.0978e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  62: {'epsilon': '7.1628e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  63: {'epsilon': '7.2274e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  64: {'epsilon': '7.2916e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  65: {'epsilon': '7.3555e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  66: {'epsilon': '7.4190e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  67: {'epsilon': '7.4822e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  68: {'epsilon': '7.5450e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  69: {'epsilon': '7.6075e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  70: {'epsilon': '7.6697e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  71: {'epsilon': '7.7316e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  72: {'epsilon': '7.7931e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  73: {'epsilon': '7.8544e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  74: {'epsilon': '7.9153e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  75: {'epsilon': '7.9760e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  76: {'epsilon': '8.0364e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  77: {'epsilon': '8.0965e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  78: {'epsilon': '8.1563e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  79: {'epsilon': '8.2159e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  80: {'epsilon': '8.2752e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  81: {'epsilon': '8.3342e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  82: {'epsilon': '8.3930e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  83: {'epsilon': '8.4516e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  84: {'epsilon': '8.5098e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  85: {'epsilon': '8.5679e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  86: {'epsilon': '8.6257e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  87: {'epsilon': '8.6833e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  88: {'epsilon': '8.7406e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  89: {'epsilon': '8.7978e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  90: {'epsilon': '8.8547e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  91: {'epsilon': '8.9114e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  92: {'epsilon': '8.9678e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  93: {'epsilon': '9.0241e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  94: {'epsilon': '9.0802e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  95: {'epsilon': '9.1360e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  96: {'epsilon': '9.1917e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  97: {'epsilon': '9.2471e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  98: {'epsilon': '9.3024e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  99: {'epsilon': '9.3574e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  100: {'epsilon': '9.4123e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  101: {'epsilon': '9.4670e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  102: {'epsilon': '9.5215e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  103: {'epsilon': '9.5758e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  104: {'epsilon': '9.6300e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  105: {'epsilon': '9.6840e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  106: {'epsilon': '9.7377e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  107: {'epsilon': '9.7914e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  108: {'epsilon': '9.8448e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  109: {'epsilon': '9.8981e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  110: {'epsilon': '9.9513e+00', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  111: {'epsilon': '1.0004e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  112: {'epsilon': '1.0057e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  113: {'epsilon': '1.0110e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  114: {'epsilon': '1.0162e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  115: {'epsilon': '1.0214e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  116: {'epsilon': '1.0267e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  117: {'epsilon': '1.0319e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  118: {'epsilon': '1.0371e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  119: {'epsilon': '1.0422e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  120: {'epsilon': '1.0474e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  121: {'epsilon': '1.0525e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  122: {'epsilon': '1.0577e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  123: {'epsilon': '1.0628e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  124: {'epsilon': '1.0679e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  125: {'epsilon': '1.0730e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  126: {'epsilon': '1.0781e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  127: {'epsilon': '1.0831e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  128: {'epsilon': '1.0882e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  129: {'epsilon': '1.0932e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  130: {'epsilon': '1.0982e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  131: {'epsilon': '1.1032e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  132: {'epsilon': '1.1082e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  133: {'epsilon': '1.1132e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  134: {'epsilon': '1.1182e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  135: {'epsilon': '1.1232e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  136: {'epsilon': '1.1281e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  137: {'epsilon': '1.1331e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  138: {'epsilon': '1.1380e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  139: {'epsilon': '1.1429e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  140: {'epsilon': '1.1478e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  141: {'epsilon': '1.1527e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  142: {'epsilon': '1.1576e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  143: {'epsilon': '1.1625e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  144: {'epsilon': '1.1673e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  145: {'epsilon': '1.1722e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  146: {'epsilon': '1.1770e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  147: {'epsilon': '1.1818e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  148: {'epsilon': '1.1866e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  149: {'epsilon': '1.1915e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  150: {'epsilon': '1.1962e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  151: {'epsilon': '1.2010e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  152: {'epsilon': '1.2058e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  153: {'epsilon': '1.2106e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  154: {'epsilon': '1.2153e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  155: {'epsilon': '1.2201e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  156: {'epsilon': '1.2248e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  157: {'epsilon': '1.2295e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  158: {'epsilon': '1.2343e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  159: {'epsilon': '1.2390e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  160: {'epsilon': '1.2437e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  161: {'epsilon': '1.2483e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  162: {'epsilon': '1.2530e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  163: {'epsilon': '1.2577e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  164: {'epsilon': '1.2624e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  165: {'epsilon': '1.2670e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  166: {'epsilon': '1.2717e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  167: {'epsilon': '1.2763e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  168: {'epsilon': '1.2809e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  169: {'epsilon': '1.2855e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  170: {'epsilon': '1.2901e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  171: {'epsilon': '1.2947e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  172: {'epsilon': '1.2993e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  173: {'epsilon': '1.3039e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  174: {'epsilon': '1.3085e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  175: {'epsilon': '1.3131e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  176: {'epsilon': '1.3176e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  177: {'epsilon': '1.3222e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  178: {'epsilon': '1.3267e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  179: {'epsilon': '1.3312e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  180: {'epsilon': '1.3358e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  181: {'epsilon': '1.3403e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  182: {'epsilon': '1.3448e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  183: {'epsilon': '1.3493e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  184: {'epsilon': '1.3538e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  185: {'epsilon': '1.3583e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  186: {'epsilon': '1.3628e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  187: {'epsilon': '1.3672e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  188: {'epsilon': '1.3717e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  189: {'epsilon': '1.3762e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  190: {'epsilon': '1.3806e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  191: {'epsilon': '1.3851e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  192: {'epsilon': '1.3895e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  193: {'epsilon': '1.3939e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  194: {'epsilon': '1.3983e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  195: {'epsilon': '1.4028e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  196: {'epsilon': '1.4072e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  197: {'epsilon': '1.4116e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  198: {'epsilon': '1.4160e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  199: {'epsilon': '1.4204e+01', 'noise_multiplier': '1.0000e+00'},
+[92mINFO [0m:      	  200: {'epsilon': '1.4247e+01', 'noise_multiplier': '1.0000e+00'}}
+[92mINFO [0m:      	
+[92mINFO [0m:      	Aggregated ClientApp-side Evaluate Metrics:
+[92mINFO [0m:      	{}
+[92mINFO [0m:      	
+[92mINFO [0m:      	ServerApp-side Evaluate Metrics:
+[92mINFO [0m:      	{ 0: { 'accuracy': '2.9030e-02',
+[92mINFO [0m:      	       'loss': '2.6531e+00',
+[92mINFO [0m:      	       'sub ac': '1.3411e-03',
+[92mINFO [0m:      	       'sub ls': '2.6315e+00'},
+[92mINFO [0m:      	  1: { 'accuracy': '2.2681e-01',
+[92mINFO [0m:      	       'loss': '2.3071e+00',
+[92mINFO [0m:      	       'sub ac': '3.7729e-01',
+[92mINFO [0m:      	       'sub ls': '2.2629e+00'},
+[92mINFO [0m:      	  2: { 'accuracy': '3.6040e-01',
+[92mINFO [0m:      	       'loss': '2.1621e+00',
+[92mINFO [0m:      	       'sub ac': '3.7640e-01',
+[92mINFO [0m:      	       'sub ls': '2.1016e+00'},
+[92mINFO [0m:      	  3: { 'accuracy': '3.6158e-01',
+[92mINFO [0m:      	       'loss': '2.0482e+00',
+[92mINFO [0m:      	       'sub ac': '3.7640e-01',
+[92mINFO [0m:      	       'sub ls': '1.9820e+00'},
+[92mINFO [0m:      	  4: { 'accuracy': '3.6252e-01',
+[92mINFO [0m:      	       'loss': '1.8950e+00',
+[92mINFO [0m:      	       'sub ac': '3.7640e-01',
+[92mINFO [0m:      	       'sub ls': '1.8218e+00'},
+[92mINFO [0m:      	  5: { 'accuracy': '3.7786e-01',
+[92mINFO [0m:      	       'loss': '1.7630e+00',
+[92mINFO [0m:      	       'sub ac': '3.7640e-01',
+[92mINFO [0m:      	       'sub ls': '1.6983e+00'},
+[92mINFO [0m:      	  6: { 'accuracy': '3.6323e-01',
+[92mINFO [0m:      	       'loss': '1.6916e+00',
+[92mINFO [0m:      	       'sub ac': '3.7506e-01',
+[92mINFO [0m:      	       'sub ls': '1.6324e+00'},
+[92mINFO [0m:      	  7: { 'accuracy': '3.6653e-01',
+[92mINFO [0m:      	       'loss': '1.6496e+00',
+[92mINFO [0m:      	       'sub ac': '3.7997e-01',
+[92mINFO [0m:      	       'sub ls': '1.5962e+00'},
+[92mINFO [0m:      	  8: { 'accuracy': '3.9674e-01',
+[92mINFO [0m:      	       'loss': '1.6163e+00',
+[92mINFO [0m:      	       'sub ac': '3.8176e-01',
+[92mINFO [0m:      	       'sub ls': '1.5674e+00'},
+[92mINFO [0m:      	  9: { 'accuracy': '3.8754e-01',
+[92mINFO [0m:      	       'loss': '1.5879e+00',
+[92mINFO [0m:      	       'sub ac': '3.8400e-01',
+[92mINFO [0m:      	       'sub ls': '1.5451e+00'},
+[92mINFO [0m:      	  10: { 'accuracy': '4.0477e-01',
+[92mINFO [0m:      	        'loss': '1.5606e+00',
+[92mINFO [0m:      	        'sub ac': '3.8936e-01',
+[92mINFO [0m:      	        'sub ls': '1.5172e+00'},
+[92mINFO [0m:      	  11: { 'accuracy': '4.4583e-01',
+[92mINFO [0m:      	        'loss': '1.5376e+00',
+[92mINFO [0m:      	        'sub ac': '4.0143e-01',
+[92mINFO [0m:      	        'sub ls': '1.4988e+00'},
+[92mINFO [0m:      	  12: { 'accuracy': '4.5811e-01',
+[92mINFO [0m:      	        'loss': '1.5171e+00',
+[92mINFO [0m:      	        'sub ac': '4.1350e-01',
+[92mINFO [0m:      	        'sub ls': '1.4829e+00'},
+[92mINFO [0m:      	  13: { 'accuracy': '4.6755e-01',
+[92mINFO [0m:      	        'loss': '1.4975e+00',
+[92mINFO [0m:      	        'sub ac': '4.2915e-01',
+[92mINFO [0m:      	        'sub ls': '1.4696e+00'},
+[92mINFO [0m:      	  14: { 'accuracy': '4.7227e-01',
+[92mINFO [0m:      	        'loss': '1.4717e+00',
+[92mINFO [0m:      	        'sub ac': '4.3630e-01',
+[92mINFO [0m:      	        'sub ls': '1.4519e+00'},
+[92mINFO [0m:      	  15: { 'accuracy': '4.8265e-01',
+[92mINFO [0m:      	        'loss': '1.4453e+00',
+[92mINFO [0m:      	        'sub ac': '4.5060e-01',
+[92mINFO [0m:      	        'sub ls': '1.4326e+00'},
+[92mINFO [0m:      	  16: { 'accuracy': '4.9304e-01',
+[92mINFO [0m:      	        'loss': '1.4276e+00',
+[92mINFO [0m:      	        'sub ac': '4.6804e-01',
+[92mINFO [0m:      	        'sub ls': '1.4180e+00'},
+[92mINFO [0m:      	  17: { 'accuracy': '5.1239e-01',
+[92mINFO [0m:      	        'loss': '1.4005e+00',
+[92mINFO [0m:      	        'sub ac': '5.0156e-01',
+[92mINFO [0m:      	        'sub ls': '1.3818e+00'},
+[92mINFO [0m:      	  18: { 'accuracy': '5.1522e-01',
+[92mINFO [0m:      	        'loss': '1.3877e+00',
+[92mINFO [0m:      	        'sub ac': '5.1051e-01',
+[92mINFO [0m:      	        'sub ls': '1.3746e+00'},
+[92mINFO [0m:      	  19: { 'accuracy': '5.1924e-01',
+[92mINFO [0m:      	        'loss': '1.3766e+00',
+[92mINFO [0m:      	        'sub ac': '5.1542e-01',
+[92mINFO [0m:      	        'sub ls': '1.3630e+00'},
+[92mINFO [0m:      	  20: { 'accuracy': '5.2419e-01',
+[92mINFO [0m:      	        'loss': '1.3657e+00',
+[92mINFO [0m:      	        'sub ac': '5.1989e-01',
+[92mINFO [0m:      	        'sub ls': '1.3528e+00'},
+[92mINFO [0m:      	  21: { 'accuracy': '5.2372e-01',
+[92mINFO [0m:      	        'loss': '1.3796e+00',
+[92mINFO [0m:      	        'sub ac': '5.1587e-01',
+[92mINFO [0m:      	        'sub ls': '1.3735e+00'},
+[92mINFO [0m:      	  22: { 'accuracy': '5.3245e-01',
+[92mINFO [0m:      	        'loss': '1.3770e+00',
+[92mINFO [0m:      	        'sub ac': '5.3107e-01',
+[92mINFO [0m:      	        'sub ls': '1.3634e+00'},
+[92mINFO [0m:      	  23: { 'accuracy': '5.4095e-01',
+[92mINFO [0m:      	        'loss': '1.3823e+00',
+[92mINFO [0m:      	        'sub ac': '5.4671e-01',
+[92mINFO [0m:      	        'sub ls': '1.3630e+00'},
+[92mINFO [0m:      	  24: { 'accuracy': '5.4709e-01',
+[92mINFO [0m:      	        'loss': '1.4022e+00',
+[92mINFO [0m:      	        'sub ac': '5.5521e-01',
+[92mINFO [0m:      	        'sub ls': '1.3734e+00'},
+[92mINFO [0m:      	  25: { 'accuracy': '5.4897e-01',
+[92mINFO [0m:      	        'loss': '1.4219e+00',
+[92mINFO [0m:      	        'sub ac': '5.5744e-01',
+[92mINFO [0m:      	        'sub ls': '1.3765e+00'},
+[92mINFO [0m:      	  26: { 'accuracy': '5.5228e-01',
+[92mINFO [0m:      	        'loss': '1.4453e+00',
+[92mINFO [0m:      	        'sub ac': '5.6191e-01',
+[92mINFO [0m:      	        'sub ls': '1.3773e+00'},
+[92mINFO [0m:      	  27: { 'accuracy': '5.5251e-01',
+[92mINFO [0m:      	        'loss': '1.4732e+00',
+[92mINFO [0m:      	        'sub ac': '5.6191e-01',
+[92mINFO [0m:      	        'sub ls': '1.3831e+00'},
+[92mINFO [0m:      	  28: { 'accuracy': '5.5676e-01',
+[92mINFO [0m:      	        'loss': '1.4921e+00',
+[92mINFO [0m:      	        'sub ac': '5.6862e-01',
+[92mINFO [0m:      	        'sub ls': '1.3810e+00'},
+[92mINFO [0m:      	  29: { 'accuracy': '5.5771e-01',
+[92mINFO [0m:      	        'loss': '1.5193e+00',
+[92mINFO [0m:      	        'sub ac': '5.6996e-01',
+[92mINFO [0m:      	        'sub ls': '1.3921e+00'},
+[92mINFO [0m:      	  30: { 'accuracy': '5.5936e-01',
+[92mINFO [0m:      	        'loss': '1.5479e+00',
+[92mINFO [0m:      	        'sub ac': '5.7085e-01',
+[92mINFO [0m:      	        'sub ls': '1.4167e+00'},
+[92mINFO [0m:      	  31: { 'accuracy': '5.6219e-01',
+[92mINFO [0m:      	        'loss': '1.5641e+00',
+[92mINFO [0m:      	        'sub ac': '5.7532e-01',
+[92mINFO [0m:      	        'sub ls': '1.4167e+00'},
+[92mINFO [0m:      	  32: { 'accuracy': '5.6408e-01',
+[92mINFO [0m:      	        'loss': '1.5938e+00',
+[92mINFO [0m:      	        'sub ac': '5.7756e-01',
+[92mINFO [0m:      	        'sub ls': '1.4331e+00'},
+[92mINFO [0m:      	  33: { 'accuracy': '5.6691e-01',
+[92mINFO [0m:      	        'loss': '1.6435e+00',
+[92mINFO [0m:      	        'sub ac': '5.8203e-01',
+[92mINFO [0m:      	        'sub ls': '1.4597e+00'},
+[92mINFO [0m:      	  34: { 'accuracy': '5.6927e-01',
+[92mINFO [0m:      	        'loss': '1.6825e+00',
+[92mINFO [0m:      	        'sub ac': '5.8650e-01',
+[92mINFO [0m:      	        'sub ls': '1.4573e+00'},
+[92mINFO [0m:      	  35: { 'accuracy': '5.6880e-01',
+[92mINFO [0m:      	        'loss': '1.7491e+00',
+[92mINFO [0m:      	        'sub ac': '5.8337e-01',
+[92mINFO [0m:      	        'sub ls': '1.4966e+00'},
+[92mINFO [0m:      	  36: { 'accuracy': '5.7045e-01',
+[92mINFO [0m:      	        'loss': '1.7778e+00',
+[92mINFO [0m:      	        'sub ac': '5.8695e-01',
+[92mINFO [0m:      	        'sub ls': '1.5051e+00'},
+[92mINFO [0m:      	  37: { 'accuracy': '5.7352e-01',
+[92mINFO [0m:      	        'loss': '1.8300e+00',
+[92mINFO [0m:      	        'sub ac': '5.8918e-01',
+[92mINFO [0m:      	        'sub ls': '1.5519e+00'},
+[92mINFO [0m:      	  38: { 'accuracy': '5.7281e-01',
+[92mINFO [0m:      	        'loss': '1.9024e+00',
+[92mINFO [0m:      	        'sub ac': '5.8963e-01',
+[92mINFO [0m:      	        'sub ls': '1.5754e+00'},
+[92mINFO [0m:      	  39: { 'accuracy': '5.7517e-01',
+[92mINFO [0m:      	        'loss': '1.9663e+00',
+[92mINFO [0m:      	        'sub ac': '5.9097e-01',
+[92mINFO [0m:      	        'sub ls': '1.6100e+00'},
+[92mINFO [0m:      	  40: { 'accuracy': '5.7682e-01',
+[92mINFO [0m:      	        'loss': '2.0259e+00',
+[92mINFO [0m:      	        'sub ac': '5.9186e-01',
+[92mINFO [0m:      	        'sub ls': '1.6552e+00'},
+[92mINFO [0m:      	  41: { 'accuracy': '5.7918e-01',
+[92mINFO [0m:      	        'loss': '2.0523e+00',
+[92mINFO [0m:      	        'sub ac': '5.9589e-01',
+[92mINFO [0m:      	        'sub ls': '1.6649e+00'},
+[92mINFO [0m:      	  42: { 'accuracy': '5.8131e-01',
+[92mINFO [0m:      	        'loss': '2.0648e+00',
+[92mINFO [0m:      	        'sub ac': '5.9946e-01',
+[92mINFO [0m:      	        'sub ls': '1.6705e+00'},
+[92mINFO [0m:      	  43: { 'accuracy': '5.8272e-01',
+[92mINFO [0m:      	        'loss': '2.0895e+00',
+[92mINFO [0m:      	        'sub ac': '6.0125e-01',
+[92mINFO [0m:      	        'sub ls': '1.6942e+00'},
+[92mINFO [0m:      	  44: { 'accuracy': '5.8414e-01',
+[92mINFO [0m:      	        'loss': '2.1548e+00',
+[92mINFO [0m:      	        'sub ac': '6.0349e-01',
+[92mINFO [0m:      	        'sub ls': '1.7756e+00'},
+[92mINFO [0m:      	  45: { 'accuracy': '5.8367e-01',
+[92mINFO [0m:      	        'loss': '2.1965e+00',
+[92mINFO [0m:      	        'sub ac': '6.0393e-01',
+[92mINFO [0m:      	        'sub ls': '1.8040e+00'},
+[92mINFO [0m:      	  46: { 'accuracy': '5.8438e-01',
+[92mINFO [0m:      	        'loss': '2.2313e+00',
+[92mINFO [0m:      	        'sub ac': '6.0393e-01',
+[92mINFO [0m:      	        'sub ls': '1.8154e+00'},
+[92mINFO [0m:      	  47: { 'accuracy': '5.8579e-01',
+[92mINFO [0m:      	        'loss': '2.2343e+00',
+[92mINFO [0m:      	        'sub ac': '6.0438e-01',
+[92mINFO [0m:      	        'sub ls': '1.8422e+00'},
+[92mINFO [0m:      	  48: { 'accuracy': '5.8626e-01',
+[92mINFO [0m:      	        'loss': '2.2282e+00',
+[92mINFO [0m:      	        'sub ac': '6.0527e-01',
+[92mINFO [0m:      	        'sub ls': '1.8754e+00'},
+[92mINFO [0m:      	  49: { 'accuracy': '5.8650e-01',
+[92mINFO [0m:      	        'loss': '2.2515e+00',
+[92mINFO [0m:      	        'sub ac': '6.0438e-01',
+[92mINFO [0m:      	        'sub ls': '1.9289e+00'},
+[92mINFO [0m:      	  50: { 'accuracy': '5.8674e-01',
+[92mINFO [0m:      	        'loss': '2.2658e+00',
+[92mINFO [0m:      	        'sub ac': '6.0393e-01',
+[92mINFO [0m:      	        'sub ls': '1.9436e+00'},
+[92mINFO [0m:      	  51: { 'accuracy': '5.8390e-01',
+[92mINFO [0m:      	        'loss': '2.3161e+00',
+[92mINFO [0m:      	        'sub ac': '5.9902e-01',
+[92mINFO [0m:      	        'sub ls': '1.9868e+00'},
+[92mINFO [0m:      	  52: { 'accuracy': '5.8414e-01',
+[92mINFO [0m:      	        'loss': '2.3716e+00',
+[92mINFO [0m:      	        'sub ac': '5.9991e-01',
+[92mINFO [0m:      	        'sub ls': '2.0525e+00'},
+[92mINFO [0m:      	  53: { 'accuracy': '5.8579e-01',
+[92mINFO [0m:      	        'loss': '2.3943e+00',
+[92mINFO [0m:      	        'sub ac': '5.9946e-01',
+[92mINFO [0m:      	        'sub ls': '2.1121e+00'},
+[92mINFO [0m:      	  54: { 'accuracy': '5.8721e-01',
+[92mINFO [0m:      	        'loss': '2.4448e+00',
+[92mINFO [0m:      	        'sub ac': '6.0170e-01',
+[92mINFO [0m:      	        'sub ls': '2.1722e+00'},
+[92mINFO [0m:      	  55: { 'accuracy': '5.8485e-01',
+[92mINFO [0m:      	        'loss': '2.4813e+00',
+[92mINFO [0m:      	        'sub ac': '5.9812e-01',
+[92mINFO [0m:      	        'sub ls': '2.2171e+00'},
+[92mINFO [0m:      	  56: { 'accuracy': '5.8744e-01',
+[92mINFO [0m:      	        'loss': '2.4971e+00',
+[92mINFO [0m:      	        'sub ac': '6.0125e-01',
+[92mINFO [0m:      	        'sub ls': '2.2869e+00'},
+[92mINFO [0m:      	  57: { 'accuracy': '5.8792e-01',
+[92mINFO [0m:      	        'loss': '2.5534e+00',
+[92mINFO [0m:      	        'sub ac': '6.0215e-01',
+[92mINFO [0m:      	        'sub ls': '2.3900e+00'},
+[92mINFO [0m:      	  58: { 'accuracy': '5.9193e-01',
+[92mINFO [0m:      	        'loss': '2.5678e+00',
+[92mINFO [0m:      	        'sub ac': '6.0572e-01',
+[92mINFO [0m:      	        'sub ls': '2.4269e+00'},
+[92mINFO [0m:      	  59: { 'accuracy': '5.9783e-01',
+[92mINFO [0m:      	        'loss': '2.6162e+00',
+[92mINFO [0m:      	        'sub ac': '6.0751e-01',
+[92mINFO [0m:      	        'sub ls': '2.5217e+00'},
+[92mINFO [0m:      	  60: { 'accuracy': '5.9476e-01',
+[92mINFO [0m:      	        'loss': '2.7228e+00',
+[92mINFO [0m:      	        'sub ac': '6.0662e-01',
+[92mINFO [0m:      	        'sub ls': '2.6069e+00'},
+[92mINFO [0m:      	  61: { 'accuracy': '5.9641e-01',
+[92mINFO [0m:      	        'loss': '2.7348e+00',
+[92mINFO [0m:      	        'sub ac': '6.0706e-01',
+[92mINFO [0m:      	        'sub ls': '2.6636e+00'},
+[92mINFO [0m:      	  62: { 'accuracy': '5.9901e-01',
+[92mINFO [0m:      	        'loss': '2.7903e+00',
+[92mINFO [0m:      	        'sub ac': '6.0617e-01',
+[92mINFO [0m:      	        'sub ls': '2.7633e+00'},
+[92mINFO [0m:      	  63: { 'accuracy': '5.9641e-01',
+[92mINFO [0m:      	        'loss': '2.8226e+00',
+[92mINFO [0m:      	        'sub ac': '6.0215e-01',
+[92mINFO [0m:      	        'sub ls': '2.7970e+00'},
+[92mINFO [0m:      	  64: { 'accuracy': '5.9830e-01',
+[92mINFO [0m:      	        'loss': '2.8941e+00',
+[92mINFO [0m:      	        'sub ac': '6.0349e-01',
+[92mINFO [0m:      	        'sub ls': '2.8821e+00'},
+[92mINFO [0m:      	  65: { 'accuracy': '6.0019e-01',
+[92mINFO [0m:      	        'loss': '2.8938e+00',
+[92mINFO [0m:      	        'sub ac': '6.0349e-01',
+[92mINFO [0m:      	        'sub ls': '2.9209e+00'},
+[92mINFO [0m:      	  66: { 'accuracy': '6.0349e-01',
+[92mINFO [0m:      	        'loss': '2.9435e+00',
+[92mINFO [0m:      	        'sub ac': '6.0304e-01',
+[92mINFO [0m:      	        'sub ls': '3.0147e+00'},
+[92mINFO [0m:      	  67: { 'accuracy': '6.0137e-01',
+[92mINFO [0m:      	        'loss': '3.0380e+00',
+[92mINFO [0m:      	        'sub ac': '6.0080e-01',
+[92mINFO [0m:      	        'sub ls': '3.1046e+00'},
+[92mINFO [0m:      	  68: { 'accuracy': '6.0208e-01',
+[92mINFO [0m:      	        'loss': '3.0671e+00',
+[92mINFO [0m:      	        'sub ac': '6.0036e-01',
+[92mINFO [0m:      	        'sub ls': '3.1402e+00'},
+[92mINFO [0m:      	  69: { 'accuracy': '6.0656e-01',
+[92mINFO [0m:      	        'loss': '3.0924e+00',
+[92mINFO [0m:      	        'sub ac': '6.0483e-01',
+[92mINFO [0m:      	        'sub ls': '3.1974e+00'},
+[92mINFO [0m:      	  70: { 'accuracy': '6.0939e-01',
+[92mINFO [0m:      	        'loss': '3.1157e+00',
+[92mINFO [0m:      	        'sub ac': '6.0617e-01',
+[92mINFO [0m:      	        'sub ls': '3.2466e+00'},
+[92mINFO [0m:      	  71: { 'accuracy': '6.1010e-01',
+[92mINFO [0m:      	        'loss': '3.1631e+00',
+[92mINFO [0m:      	        'sub ac': '6.0349e-01',
+[92mINFO [0m:      	        'sub ls': '3.2632e+00'},
+[92mINFO [0m:      	  72: { 'accuracy': '6.1034e-01',
+[92mINFO [0m:      	        'loss': '3.1798e+00',
+[92mINFO [0m:      	        'sub ac': '6.0572e-01',
+[92mINFO [0m:      	        'sub ls': '3.2918e+00'},
+[92mINFO [0m:      	  73: { 'accuracy': '6.0987e-01',
+[92mINFO [0m:      	        'loss': '3.1696e+00',
+[92mINFO [0m:      	        'sub ac': '5.9678e-01',
+[92mINFO [0m:      	        'sub ls': '3.2963e+00'},
+[92mINFO [0m:      	  74: { 'accuracy': '6.1553e-01',
+[92mINFO [0m:      	        'loss': '3.1391e+00',
+[92mINFO [0m:      	        'sub ac': '6.0393e-01',
+[92mINFO [0m:      	        'sub ls': '3.3068e+00'},
+[92mINFO [0m:      	  75: { 'accuracy': '6.1860e-01',
+[92mINFO [0m:      	        'loss': '3.1722e+00',
+[92mINFO [0m:      	        'sub ac': '6.0527e-01',
+[92mINFO [0m:      	        'sub ls': '3.3367e+00'},
+[92mINFO [0m:      	  76: { 'accuracy': '6.1813e-01',
+[92mINFO [0m:      	        'loss': '3.2228e+00',
+[92mINFO [0m:      	        'sub ac': '6.0393e-01',
+[92mINFO [0m:      	        'sub ls': '3.3560e+00'},
+[92mINFO [0m:      	  77: { 'accuracy': '6.2119e-01',
+[92mINFO [0m:      	        'loss': '3.2092e+00',
+[92mINFO [0m:      	        'sub ac': '6.0662e-01',
+[92mINFO [0m:      	        'sub ls': '3.3591e+00'},
+[92mINFO [0m:      	  78: { 'accuracy': '6.2049e-01',
+[92mINFO [0m:      	        'loss': '3.2296e+00',
+[92mINFO [0m:      	        'sub ac': '6.0080e-01',
+[92mINFO [0m:      	        'sub ls': '3.3893e+00'},
+[92mINFO [0m:      	  79: { 'accuracy': '6.2049e-01',
+[92mINFO [0m:      	        'loss': '3.2342e+00',
+[92mINFO [0m:      	        'sub ac': '6.0215e-01',
+[92mINFO [0m:      	        'sub ls': '3.4019e+00'},
+[92mINFO [0m:      	  80: { 'accuracy': '6.2261e-01',
+[92mINFO [0m:      	        'loss': '3.1906e+00',
+[92mINFO [0m:      	        'sub ac': '6.0349e-01',
+[92mINFO [0m:      	        'sub ls': '3.3605e+00'},
+[92mINFO [0m:      	  81: { 'accuracy': '6.2639e-01',
+[92mINFO [0m:      	        'loss': '3.1777e+00',
+[92mINFO [0m:      	        'sub ac': '6.0483e-01',
+[92mINFO [0m:      	        'sub ls': '3.4020e+00'},
+[92mINFO [0m:      	  82: { 'accuracy': '6.2993e-01',
+[92mINFO [0m:      	        'loss': '3.2050e+00',
+[92mINFO [0m:      	        'sub ac': '6.0706e-01',
+[92mINFO [0m:      	        'sub ls': '3.4355e+00'},
+[92mINFO [0m:      	  83: { 'accuracy': '6.2827e-01',
+[92mINFO [0m:      	        'loss': '3.2195e+00',
+[92mINFO [0m:      	        'sub ac': '6.0751e-01',
+[92mINFO [0m:      	        'sub ls': '3.4281e+00'},
+[92mINFO [0m:      	  84: { 'accuracy': '6.2898e-01',
+[92mINFO [0m:      	        'loss': '3.2040e+00',
+[92mINFO [0m:      	        'sub ac': '6.0572e-01',
+[92mINFO [0m:      	        'sub ls': '3.4556e+00'},
+[92mINFO [0m:      	  85: { 'accuracy': '6.2709e-01',
+[92mINFO [0m:      	        'loss': '3.1849e+00',
+[92mINFO [0m:      	        'sub ac': '6.0215e-01',
+[92mINFO [0m:      	        'sub ls': '3.4280e+00'},
+[92mINFO [0m:      	  86: { 'accuracy': '6.2733e-01',
+[92mINFO [0m:      	        'loss': '3.1730e+00',
+[92mINFO [0m:      	        'sub ac': '6.0527e-01',
+[92mINFO [0m:      	        'sub ls': '3.4327e+00'},
+[92mINFO [0m:      	  87: { 'accuracy': '6.2993e-01',
+[92mINFO [0m:      	        'loss': '3.1794e+00',
+[92mINFO [0m:      	        'sub ac': '6.0706e-01',
+[92mINFO [0m:      	        'sub ls': '3.4330e+00'},
+[92mINFO [0m:      	  88: { 'accuracy': '6.2969e-01',
+[92mINFO [0m:      	        'loss': '3.2186e+00',
+[92mINFO [0m:      	        'sub ac': '6.0662e-01',
+[92mINFO [0m:      	        'sub ls': '3.4633e+00'},
+[92mINFO [0m:      	  89: { 'accuracy': '6.3134e-01',
+[92mINFO [0m:      	        'loss': '3.1845e+00',
+[92mINFO [0m:      	        'sub ac': '6.0662e-01',
+[92mINFO [0m:      	        'sub ls': '3.4900e+00'},
+[92mINFO [0m:      	  90: { 'accuracy': '6.3205e-01',
+[92mINFO [0m:      	        'loss': '3.1924e+00',
+[92mINFO [0m:      	        'sub ac': '6.0706e-01',
+[92mINFO [0m:      	        'sub ls': '3.4747e+00'},
+[92mINFO [0m:      	  91: { 'accuracy': '6.2804e-01',
+[92mINFO [0m:      	        'loss': '3.2420e+00',
+[92mINFO [0m:      	        'sub ac': '6.0349e-01',
+[92mINFO [0m:      	        'sub ls': '3.4741e+00'},
+[92mINFO [0m:      	  92: { 'accuracy': '6.3181e-01',
+[92mINFO [0m:      	        'loss': '3.2028e+00',
+[92mINFO [0m:      	        'sub ac': '6.0617e-01',
+[92mINFO [0m:      	        'sub ls': '3.4827e+00'},
+[92mINFO [0m:      	  93: { 'accuracy': '6.3111e-01',
+[92mINFO [0m:      	        'loss': '3.2169e+00',
+[92mINFO [0m:      	        'sub ac': '6.0617e-01',
+[92mINFO [0m:      	        'sub ls': '3.4790e+00'},
+[92mINFO [0m:      	  94: { 'accuracy': '6.3252e-01',
+[92mINFO [0m:      	        'loss': '3.1594e+00',
+[92mINFO [0m:      	        'sub ac': '6.0527e-01',
+[92mINFO [0m:      	        'sub ls': '3.4492e+00'},
+[92mINFO [0m:      	  95: { 'accuracy': '6.3559e-01',
+[92mINFO [0m:      	        'loss': '3.1277e+00',
+[92mINFO [0m:      	        'sub ac': '6.0930e-01',
+[92mINFO [0m:      	        'sub ls': '3.3875e+00'},
+[92mINFO [0m:      	  96: { 'accuracy': '6.3606e-01',
+[92mINFO [0m:      	        'loss': '3.1824e+00',
+[92mINFO [0m:      	        'sub ac': '6.1243e-01',
+[92mINFO [0m:      	        'sub ls': '3.4282e+00'},
+[92mINFO [0m:      	  97: { 'accuracy': '6.3842e-01',
+[92mINFO [0m:      	        'loss': '3.1957e+00',
+[92mINFO [0m:      	        'sub ac': '6.1600e-01',
+[92mINFO [0m:      	        'sub ls': '3.4513e+00'},
+[92mINFO [0m:      	  98: { 'accuracy': '6.3842e-01',
+[92mINFO [0m:      	        'loss': '3.1826e+00',
+[92mINFO [0m:      	        'sub ac': '6.1332e-01',
+[92mINFO [0m:      	        'sub ls': '3.4242e+00'},
+[92mINFO [0m:      	  99: { 'accuracy': '6.4008e-01',
+[92mINFO [0m:      	        'loss': '3.1638e+00',
+[92mINFO [0m:      	        'sub ac': '6.1377e-01',
+[92mINFO [0m:      	        'sub ls': '3.4607e+00'},
+[92mINFO [0m:      	  100: { 'accuracy': '6.3866e-01',
+[92mINFO [0m:      	         'loss': '3.1671e+00',
+[92mINFO [0m:      	         'sub ac': '6.1287e-01',
+[92mINFO [0m:      	         'sub ls': '3.4021e+00'},
+[92mINFO [0m:      	  101: { 'accuracy': '6.4078e-01',
+[92mINFO [0m:      	         'loss': '3.1509e+00',
+[92mINFO [0m:      	         'sub ac': '6.1332e-01',
+[92mINFO [0m:      	         'sub ls': '3.4470e+00'},
+[92mINFO [0m:      	  102: { 'accuracy': '6.3913e-01',
+[92mINFO [0m:      	         'loss': '3.1856e+00',
+[92mINFO [0m:      	         'sub ac': '6.1153e-01',
+[92mINFO [0m:      	         'sub ls': '3.4630e+00'},
+[92mINFO [0m:      	  103: { 'accuracy': '6.3960e-01',
+[92mINFO [0m:      	         'loss': '3.1640e+00',
+[92mINFO [0m:      	         'sub ac': '6.1466e-01',
+[92mINFO [0m:      	         'sub ls': '3.4277e+00'},
+[92mINFO [0m:      	  104: { 'accuracy': '6.4055e-01',
+[92mINFO [0m:      	         'loss': '3.1984e+00',
+[92mINFO [0m:      	         'sub ac': '6.1466e-01',
+[92mINFO [0m:      	         'sub ls': '3.4643e+00'},
+[92mINFO [0m:      	  105: { 'accuracy': '6.4102e-01',
+[92mINFO [0m:      	         'loss': '3.1739e+00',
+[92mINFO [0m:      	         'sub ac': '6.1645e-01',
+[92mINFO [0m:      	         'sub ls': '3.4516e+00'},
+[92mINFO [0m:      	  106: { 'accuracy': '6.4338e-01',
+[92mINFO [0m:      	         'loss': '3.1810e+00',
+[92mINFO [0m:      	         'sub ac': '6.1779e-01',
+[92mINFO [0m:      	         'sub ls': '3.4548e+00'},
+[92mINFO [0m:      	  107: { 'accuracy': '6.4527e-01',
+[92mINFO [0m:      	         'loss': '3.1571e+00',
+[92mINFO [0m:      	         'sub ac': '6.1869e-01',
+[92mINFO [0m:      	         'sub ls': '3.4051e+00'},
+[92mINFO [0m:      	  108: { 'accuracy': '6.4503e-01',
+[92mINFO [0m:      	         'loss': '3.1712e+00',
+[92mINFO [0m:      	         'sub ac': '6.1958e-01',
+[92mINFO [0m:      	         'sub ls': '3.4563e+00'},
+[92mINFO [0m:      	  109: { 'accuracy': '6.4550e-01',
+[92mINFO [0m:      	         'loss': '3.1429e+00',
+[92mINFO [0m:      	         'sub ac': '6.1869e-01',
+[92mINFO [0m:      	         'sub ls': '3.4628e+00'},
+[92mINFO [0m:      	  110: { 'accuracy': '6.4503e-01',
+[92mINFO [0m:      	         'loss': '3.1645e+00',
+[92mINFO [0m:      	         'sub ac': '6.1913e-01',
+[92mINFO [0m:      	         'sub ls': '3.4274e+00'},
+[92mINFO [0m:      	  111: { 'accuracy': '6.4527e-01',
+[92mINFO [0m:      	         'loss': '3.1318e+00',
+[92mINFO [0m:      	         'sub ac': '6.1779e-01',
+[92mINFO [0m:      	         'sub ls': '3.4124e+00'},
+[92mINFO [0m:      	  112: { 'accuracy': '6.4314e-01',
+[92mINFO [0m:      	         'loss': '3.1678e+00',
+[92mINFO [0m:      	         'sub ac': '6.1511e-01',
+[92mINFO [0m:      	         'sub ls': '3.4935e+00'},
+[92mINFO [0m:      	  113: { 'accuracy': '6.4432e-01',
+[92mINFO [0m:      	         'loss': '3.2022e+00',
+[92mINFO [0m:      	         'sub ac': '6.1734e-01',
+[92mINFO [0m:      	         'sub ls': '3.5089e+00'},
+[92mINFO [0m:      	  114: { 'accuracy': '6.4550e-01',
+[92mINFO [0m:      	         'loss': '3.1713e+00',
+[92mINFO [0m:      	         'sub ac': '6.1779e-01',
+[92mINFO [0m:      	         'sub ls': '3.4898e+00'},
+[92mINFO [0m:      	  115: { 'accuracy': '6.4527e-01',
+[92mINFO [0m:      	         'loss': '3.1594e+00',
+[92mINFO [0m:      	         'sub ac': '6.1734e-01',
+[92mINFO [0m:      	         'sub ls': '3.4932e+00'},
+[92mINFO [0m:      	  116: { 'accuracy': '6.4621e-01',
+[92mINFO [0m:      	         'loss': '3.1638e+00',
+[92mINFO [0m:      	         'sub ac': '6.1913e-01',
+[92mINFO [0m:      	         'sub ls': '3.5192e+00'},
+[92mINFO [0m:      	  117: { 'accuracy': '6.4786e-01',
+[92mINFO [0m:      	         'loss': '3.1262e+00',
+[92mINFO [0m:      	         'sub ac': '6.2137e-01',
+[92mINFO [0m:      	         'sub ls': '3.4188e+00'},
+[92mINFO [0m:      	  118: { 'accuracy': '6.4692e-01',
+[92mINFO [0m:      	         'loss': '3.1016e+00',
+[92mINFO [0m:      	         'sub ac': '6.1913e-01',
+[92mINFO [0m:      	         'sub ls': '3.3957e+00'},
+[92mINFO [0m:      	  119: { 'accuracy': '6.4975e-01',
+[92mINFO [0m:      	         'loss': '3.0802e+00',
+[92mINFO [0m:      	         'sub ac': '6.2226e-01',
+[92mINFO [0m:      	         'sub ls': '3.4047e+00'},
+[92mINFO [0m:      	  120: { 'accuracy': '6.4645e-01',
+[92mINFO [0m:      	         'loss': '3.1216e+00',
+[92mINFO [0m:      	         'sub ac': '6.1779e-01',
+[92mINFO [0m:      	         'sub ls': '3.4057e+00'},
+[92mINFO [0m:      	  121: { 'accuracy': '6.4999e-01',
+[92mINFO [0m:      	         'loss': '3.0901e+00',
+[92mINFO [0m:      	         'sub ac': '6.2047e-01',
+[92mINFO [0m:      	         'sub ls': '3.3739e+00'},
+[92mINFO [0m:      	  122: { 'accuracy': '6.4786e-01',
+[92mINFO [0m:      	         'loss': '3.1256e+00',
+[92mINFO [0m:      	         'sub ac': '6.1824e-01',
+[92mINFO [0m:      	         'sub ls': '3.3821e+00'},
+[92mINFO [0m:      	  123: { 'accuracy': '6.4975e-01',
+[92mINFO [0m:      	         'loss': '3.0787e+00',
+[92mINFO [0m:      	         'sub ac': '6.2003e-01',
+[92mINFO [0m:      	         'sub ls': '3.3570e+00'},
+[92mINFO [0m:      	  124: { 'accuracy': '6.5093e-01',
+[92mINFO [0m:      	         'loss': '3.1141e+00',
+[92mINFO [0m:      	         'sub ac': '6.2316e-01',
+[92mINFO [0m:      	         'sub ls': '3.3784e+00'},
+[92mINFO [0m:      	  125: { 'accuracy': '6.5164e-01',
+[92mINFO [0m:      	         'loss': '3.0879e+00',
+[92mINFO [0m:      	         'sub ac': '6.2226e-01',
+[92mINFO [0m:      	         'sub ls': '3.3930e+00'},
+[92mINFO [0m:      	  126: { 'accuracy': '6.4999e-01',
+[92mINFO [0m:      	         'loss': '3.0965e+00',
+[92mINFO [0m:      	         'sub ac': '6.2003e-01',
+[92mINFO [0m:      	         'sub ls': '3.3799e+00'},
+[92mINFO [0m:      	  127: { 'accuracy': '6.5093e-01',
+[92mINFO [0m:      	         'loss': '3.0941e+00',
+[92mINFO [0m:      	         'sub ac': '6.2316e-01',
+[92mINFO [0m:      	         'sub ls': '3.4018e+00'},
+[92mINFO [0m:      	  128: { 'accuracy': '6.4904e-01',
+[92mINFO [0m:      	         'loss': '3.1423e+00',
+[92mINFO [0m:      	         'sub ac': '6.2092e-01',
+[92mINFO [0m:      	         'sub ls': '3.4189e+00'},
+[92mINFO [0m:      	  129: { 'accuracy': '6.5117e-01',
+[92mINFO [0m:      	         'loss': '3.0986e+00',
+[92mINFO [0m:      	         'sub ac': '6.2226e-01',
+[92mINFO [0m:      	         'sub ls': '3.3560e+00'},
+[92mINFO [0m:      	  130: { 'accuracy': '6.4928e-01',
+[92mINFO [0m:      	         'loss': '3.1208e+00',
+[92mINFO [0m:      	         'sub ac': '6.2181e-01',
+[92mINFO [0m:      	         'sub ls': '3.4068e+00'},
+[92mINFO [0m:      	  131: { 'accuracy': '6.5707e-01',
+[92mINFO [0m:      	         'loss': '3.0821e+00',
+[92mINFO [0m:      	         'sub ac': '6.3120e-01',
+[92mINFO [0m:      	         'sub ls': '3.4111e+00'},
+[92mINFO [0m:      	  132: { 'accuracy': '6.4975e-01',
+[92mINFO [0m:      	         'loss': '3.1449e+00',
+[92mINFO [0m:      	         'sub ac': '6.2226e-01',
+[92mINFO [0m:      	         'sub ls': '3.4193e+00'},
+[92mINFO [0m:      	  133: { 'accuracy': '6.5353e-01',
+[92mINFO [0m:      	         'loss': '3.0938e+00',
+[92mINFO [0m:      	         'sub ac': '6.2539e-01',
+[92mINFO [0m:      	         'sub ls': '3.4007e+00'},
+[92mINFO [0m:      	  134: { 'accuracy': '6.5565e-01',
+[92mINFO [0m:      	         'loss': '3.0662e+00',
+[92mINFO [0m:      	         'sub ac': '6.2941e-01',
+[92mINFO [0m:      	         'sub ls': '3.4105e+00'},
+[92mINFO [0m:      	  135: { 'accuracy': '6.5542e-01',
+[92mINFO [0m:      	         'loss': '3.1088e+00',
+[92mINFO [0m:      	         'sub ac': '6.2763e-01',
+[92mINFO [0m:      	         'sub ls': '3.4381e+00'},
+[92mINFO [0m:      	  136: { 'accuracy': '6.5518e-01',
+[92mINFO [0m:      	         'loss': '3.1511e+00',
+[92mINFO [0m:      	         'sub ac': '6.2629e-01',
+[92mINFO [0m:      	         'sub ls': '3.4649e+00'},
+[92mINFO [0m:      	  137: { 'accuracy': '6.5542e-01',
+[92mINFO [0m:      	         'loss': '3.1550e+00',
+[92mINFO [0m:      	         'sub ac': '6.2494e-01',
+[92mINFO [0m:      	         'sub ls': '3.4795e+00'},
+[92mINFO [0m:      	  138: { 'accuracy': '6.5471e-01',
+[92mINFO [0m:      	         'loss': '3.1501e+00',
+[92mINFO [0m:      	         'sub ac': '6.2405e-01',
+[92mINFO [0m:      	         'sub ls': '3.4807e+00'},
+[92mINFO [0m:      	  139: { 'accuracy': '6.5943e-01',
+[92mINFO [0m:      	         'loss': '3.0619e+00',
+[92mINFO [0m:      	         'sub ac': '6.2673e-01',
+[92mINFO [0m:      	         'sub ls': '3.4484e+00'},
+[92mINFO [0m:      	  140: { 'accuracy': '6.5494e-01',
+[92mINFO [0m:      	         'loss': '3.1303e+00',
+[92mINFO [0m:      	         'sub ac': '6.2360e-01',
+[92mINFO [0m:      	         'sub ls': '3.4672e+00'},
+[92mINFO [0m:      	  141: { 'accuracy': '6.5518e-01',
+[92mINFO [0m:      	         'loss': '3.1527e+00',
+[92mINFO [0m:      	         'sub ac': '6.2494e-01',
+[92mINFO [0m:      	         'sub ls': '3.5095e+00'},
+[92mINFO [0m:      	  142: { 'accuracy': '6.5589e-01',
+[92mINFO [0m:      	         'loss': '3.1619e+00',
+[92mINFO [0m:      	         'sub ac': '6.2673e-01',
+[92mINFO [0m:      	         'sub ls': '3.5128e+00'},
+[92mINFO [0m:      	  143: { 'accuracy': '6.5612e-01',
+[92mINFO [0m:      	         'loss': '3.1341e+00',
+[92mINFO [0m:      	         'sub ac': '6.2629e-01',
+[92mINFO [0m:      	         'sub ls': '3.4968e+00'},
+[92mINFO [0m:      	  144: { 'accuracy': '6.5943e-01',
+[92mINFO [0m:      	         'loss': '3.1355e+00',
+[92mINFO [0m:      	         'sub ac': '6.2852e-01',
+[92mINFO [0m:      	         'sub ls': '3.4784e+00'},
+[92mINFO [0m:      	  145: { 'accuracy': '6.5848e-01',
+[92mINFO [0m:      	         'loss': '3.1127e+00',
+[92mINFO [0m:      	         'sub ac': '6.2673e-01',
+[92mINFO [0m:      	         'sub ls': '3.4619e+00'},
+[92mINFO [0m:      	  146: { 'accuracy': '6.6014e-01',
+[92mINFO [0m:      	         'loss': '3.1142e+00',
+[92mINFO [0m:      	         'sub ac': '6.2986e-01',
+[92mINFO [0m:      	         'sub ls': '3.4411e+00'},
+[92mINFO [0m:      	  147: { 'accuracy': '6.6439e-01',
+[92mINFO [0m:      	         'loss': '3.0841e+00',
+[92mINFO [0m:      	         'sub ac': '6.3523e-01',
+[92mINFO [0m:      	         'sub ls': '3.4350e+00'},
+[92mINFO [0m:      	  148: { 'accuracy': '6.6344e-01',
+[92mINFO [0m:      	         'loss': '3.0839e+00',
+[92mINFO [0m:      	         'sub ac': '6.3478e-01',
+[92mINFO [0m:      	         'sub ls': '3.4099e+00'},
+[92mINFO [0m:      	  149: { 'accuracy': '6.6368e-01',
+[92mINFO [0m:      	         'loss': '3.0434e+00',
+[92mINFO [0m:      	         'sub ac': '6.3344e-01',
+[92mINFO [0m:      	         'sub ls': '3.3824e+00'},
+[92mINFO [0m:      	  150: { 'accuracy': '6.6273e-01',
+[92mINFO [0m:      	         'loss': '3.0530e+00',
+[92mINFO [0m:      	         'sub ac': '6.3210e-01',
+[92mINFO [0m:      	         'sub ls': '3.4164e+00'},
+[92mINFO [0m:      	  151: { 'accuracy': '6.6344e-01',
+[92mINFO [0m:      	         'loss': '3.0761e+00',
+[92mINFO [0m:      	         'sub ac': '6.3433e-01',
+[92mINFO [0m:      	         'sub ls': '3.3968e+00'},
+[92mINFO [0m:      	  152: { 'accuracy': '6.6486e-01',
+[92mINFO [0m:      	         'loss': '3.0289e+00',
+[92mINFO [0m:      	         'sub ac': '6.3612e-01',
+[92mINFO [0m:      	         'sub ls': '3.3793e+00'},
+[92mINFO [0m:      	  153: { 'accuracy': '6.6462e-01',
+[92mINFO [0m:      	         'loss': '3.0489e+00',
+[92mINFO [0m:      	         'sub ac': '6.3433e-01',
+[92mINFO [0m:      	         'sub ls': '3.4211e+00'},
+[92mINFO [0m:      	  154: { 'accuracy': '6.6816e-01',
+[92mINFO [0m:      	         'loss': '3.0499e+00',
+[92mINFO [0m:      	         'sub ac': '6.3746e-01',
+[92mINFO [0m:      	         'sub ls': '3.4310e+00'},
+[92mINFO [0m:      	  155: { 'accuracy': '6.6793e-01',
+[92mINFO [0m:      	         'loss': '3.0165e+00',
+[92mINFO [0m:      	         'sub ac': '6.3344e-01',
+[92mINFO [0m:      	         'sub ls': '3.4051e+00'},
+[92mINFO [0m:      	  156: { 'accuracy': '6.6580e-01',
+[92mINFO [0m:      	         'loss': '3.0681e+00',
+[92mINFO [0m:      	         'sub ac': '6.3388e-01',
+[92mINFO [0m:      	         'sub ls': '3.4230e+00'},
+[92mINFO [0m:      	  157: { 'accuracy': '6.6722e-01',
+[92mINFO [0m:      	         'loss': '3.0619e+00',
+[92mINFO [0m:      	         'sub ac': '6.3880e-01',
+[92mINFO [0m:      	         'sub ls': '3.3771e+00'},
+[92mINFO [0m:      	  158: { 'accuracy': '6.6580e-01',
+[92mINFO [0m:      	         'loss': '3.0239e+00',
+[92mINFO [0m:      	         'sub ac': '6.3388e-01',
+[92mINFO [0m:      	         'sub ls': '3.3930e+00'},
+[92mINFO [0m:      	  159: { 'accuracy': '6.6722e-01',
+[92mINFO [0m:      	         'loss': '3.0730e+00',
+[92mINFO [0m:      	         'sub ac': '6.3746e-01',
+[92mINFO [0m:      	         'sub ls': '3.4144e+00'},
+[92mINFO [0m:      	  160: { 'accuracy': '6.6651e-01',
+[92mINFO [0m:      	         'loss': '3.0901e+00',
+[92mINFO [0m:      	         'sub ac': '6.3523e-01',
+[92mINFO [0m:      	         'sub ls': '3.4554e+00'},
+[92mINFO [0m:      	  161: { 'accuracy': '6.6486e-01',
+[92mINFO [0m:      	         'loss': '3.1259e+00',
+[92mINFO [0m:      	         'sub ac': '6.3388e-01',
+[92mINFO [0m:      	         'sub ls': '3.4752e+00'},
+[92mINFO [0m:      	  162: { 'accuracy': '6.6745e-01',
+[92mINFO [0m:      	         'loss': '3.0907e+00',
+[92mINFO [0m:      	         'sub ac': '6.3835e-01',
+[92mINFO [0m:      	         'sub ls': '3.4654e+00'},
+[92mINFO [0m:      	  163: { 'accuracy': '6.6509e-01',
+[92mINFO [0m:      	         'loss': '3.0653e+00',
+[92mINFO [0m:      	         'sub ac': '6.3523e-01',
+[92mINFO [0m:      	         'sub ls': '3.4275e+00'},
+[92mINFO [0m:      	  164: { 'accuracy': '6.6887e-01',
+[92mINFO [0m:      	         'loss': '3.0849e+00',
+[92mINFO [0m:      	         'sub ac': '6.3791e-01',
+[92mINFO [0m:      	         'sub ls': '3.4452e+00'},
+[92mINFO [0m:      	  165: { 'accuracy': '6.6745e-01',
+[92mINFO [0m:      	         'loss': '3.0741e+00',
+[92mINFO [0m:      	         'sub ac': '6.3523e-01',
+[92mINFO [0m:      	         'sub ls': '3.4299e+00'},
+[92mINFO [0m:      	  166: { 'accuracy': '6.6840e-01',
+[92mINFO [0m:      	         'loss': '3.0635e+00',
+[92mINFO [0m:      	         'sub ac': '6.3791e-01',
+[92mINFO [0m:      	         'sub ls': '3.4060e+00'},
+[92mINFO [0m:      	  167: { 'accuracy': '6.6934e-01',
+[92mINFO [0m:      	         'loss': '3.0902e+00',
+[92mINFO [0m:      	         'sub ac': '6.4059e-01',
+[92mINFO [0m:      	         'sub ls': '3.4520e+00'},
+[92mINFO [0m:      	  168: { 'accuracy': '6.6934e-01',
+[92mINFO [0m:      	         'loss': '3.0781e+00',
+[92mINFO [0m:      	         'sub ac': '6.4104e-01',
+[92mINFO [0m:      	         'sub ls': '3.4479e+00'},
+[92mINFO [0m:      	  169: { 'accuracy': '6.7099e-01',
+[92mINFO [0m:      	         'loss': '3.0913e+00',
+[92mINFO [0m:      	         'sub ac': '6.4238e-01',
+[92mINFO [0m:      	         'sub ls': '3.4373e+00'},
+[92mINFO [0m:      	  170: { 'accuracy': '6.7076e-01',
+[92mINFO [0m:      	         'loss': '3.0915e+00',
+[92mINFO [0m:      	         'sub ac': '6.4059e-01',
+[92mINFO [0m:      	         'sub ls': '3.4678e+00'},
+[92mINFO [0m:      	  171: { 'accuracy': '6.7217e-01',
+[92mINFO [0m:      	         'loss': '3.0883e+00',
+[92mINFO [0m:      	         'sub ac': '6.4372e-01',
+[92mINFO [0m:      	         'sub ls': '3.4675e+00'},
+[92mINFO [0m:      	  172: { 'accuracy': '6.7217e-01',
+[92mINFO [0m:      	         'loss': '3.1031e+00',
+[92mINFO [0m:      	         'sub ac': '6.4372e-01',
+[92mINFO [0m:      	         'sub ls': '3.4702e+00'},
+[92mINFO [0m:      	  173: { 'accuracy': '6.7241e-01',
+[92mINFO [0m:      	         'loss': '3.0700e+00',
+[92mINFO [0m:      	         'sub ac': '6.4372e-01',
+[92mINFO [0m:      	         'sub ls': '3.4343e+00'},
+[92mINFO [0m:      	  174: { 'accuracy': '6.7217e-01',
+[92mINFO [0m:      	         'loss': '3.0655e+00',
+[92mINFO [0m:      	         'sub ac': '6.4238e-01',
+[92mINFO [0m:      	         'sub ls': '3.4149e+00'},
+[92mINFO [0m:      	  175: { 'accuracy': '6.7265e-01',
+[92mINFO [0m:      	         'loss': '3.0759e+00',
+[92mINFO [0m:      	         'sub ac': '6.4327e-01',
+[92mINFO [0m:      	         'sub ls': '3.4222e+00'},
+[92mINFO [0m:      	  176: { 'accuracy': '6.7099e-01',
+[92mINFO [0m:      	         'loss': '3.0858e+00',
+[92mINFO [0m:      	         'sub ac': '6.4193e-01',
+[92mINFO [0m:      	         'sub ls': '3.4530e+00'},
+[92mINFO [0m:      	  177: { 'accuracy': '6.7076e-01',
+[92mINFO [0m:      	         'loss': '3.0903e+00',
+[92mINFO [0m:      	         'sub ac': '6.4104e-01',
+[92mINFO [0m:      	         'sub ls': '3.4462e+00'},
+[92mINFO [0m:      	  178: { 'accuracy': '6.6981e-01',
+[92mINFO [0m:      	         'loss': '3.0744e+00',
+[92mINFO [0m:      	         'sub ac': '6.3880e-01',
+[92mINFO [0m:      	         'sub ls': '3.4374e+00'},
+[92mINFO [0m:      	  179: { 'accuracy': '6.7147e-01',
+[92mINFO [0m:      	         'loss': '3.0907e+00',
+[92mINFO [0m:      	         'sub ac': '6.3880e-01',
+[92mINFO [0m:      	         'sub ls': '3.4802e+00'},
+[92mINFO [0m:      	  180: { 'accuracy': '6.7288e-01',
+[92mINFO [0m:      	         'loss': '3.0623e+00',
+[92mINFO [0m:      	         'sub ac': '6.4193e-01',
+[92mINFO [0m:      	         'sub ls': '3.4490e+00'},
+[92mINFO [0m:      	  181: { 'accuracy': '6.7076e-01',
+[92mINFO [0m:      	         'loss': '3.1058e+00',
+[92mINFO [0m:      	         'sub ac': '6.4059e-01',
+[92mINFO [0m:      	         'sub ls': '3.4630e+00'},
+[92mINFO [0m:      	  182: { 'accuracy': '6.7241e-01',
+[92mINFO [0m:      	         'loss': '3.1160e+00',
+[92mINFO [0m:      	         'sub ac': '6.4148e-01',
+[92mINFO [0m:      	         'sub ls': '3.4832e+00'},
+[92mINFO [0m:      	  183: { 'accuracy': '6.7288e-01',
+[92mINFO [0m:      	         'loss': '3.0970e+00',
+[92mINFO [0m:      	         'sub ac': '6.4238e-01',
+[92mINFO [0m:      	         'sub ls': '3.4375e+00'},
+[92mINFO [0m:      	  184: { 'accuracy': '6.7288e-01',
+[92mINFO [0m:      	         'loss': '3.0869e+00',
+[92mINFO [0m:      	         'sub ac': '6.4327e-01',
+[92mINFO [0m:      	         'sub ls': '3.4305e+00'},
+[92mINFO [0m:      	  185: { 'accuracy': '6.7666e-01',
+[92mINFO [0m:      	         'loss': '3.0798e+00',
+[92mINFO [0m:      	         'sub ac': '6.4774e-01',
+[92mINFO [0m:      	         'sub ls': '3.4275e+00'},
+[92mINFO [0m:      	  186: { 'accuracy': '6.7359e-01',
+[92mINFO [0m:      	         'loss': '3.0960e+00',
+[92mINFO [0m:      	         'sub ac': '6.4461e-01',
+[92mINFO [0m:      	         'sub ls': '3.4232e+00'},
+[92mINFO [0m:      	  187: { 'accuracy': '6.7312e-01',
+[92mINFO [0m:      	         'loss': '3.0908e+00',
+[92mINFO [0m:      	         'sub ac': '6.4461e-01',
+[92mINFO [0m:      	         'sub ls': '3.3902e+00'},
+[92mINFO [0m:      	  188: { 'accuracy': '6.7288e-01',
+[92mINFO [0m:      	         'loss': '3.0817e+00',
+[92mINFO [0m:      	         'sub ac': '6.4506e-01',
+[92mINFO [0m:      	         'sub ls': '3.4331e+00'},
+[92mINFO [0m:      	  189: { 'accuracy': '6.7194e-01',
+[92mINFO [0m:      	         'loss': '3.1168e+00',
+[92mINFO [0m:      	         'sub ac': '6.4238e-01',
+[92mINFO [0m:      	         'sub ls': '3.4507e+00'},
+[92mINFO [0m:      	  190: { 'accuracy': '6.7170e-01',
+[92mINFO [0m:      	         'loss': '3.1096e+00',
+[92mINFO [0m:      	         'sub ac': '6.4327e-01',
+[92mINFO [0m:      	         'sub ls': '3.4201e+00'},
+[92mINFO [0m:      	  191: { 'accuracy': '6.7501e-01',
+[92mINFO [0m:      	         'loss': '3.0884e+00',
+[92mINFO [0m:      	         'sub ac': '6.4819e-01',
+[92mINFO [0m:      	         'sub ls': '3.4209e+00'},
+[92mINFO [0m:      	  192: { 'accuracy': '6.7359e-01',
+[92mINFO [0m:      	         'loss': '3.0676e+00',
+[92mINFO [0m:      	         'sub ac': '6.4461e-01',
+[92mINFO [0m:      	         'sub ls': '3.3997e+00'},
+[92mINFO [0m:      	  193: { 'accuracy': '6.7406e-01',
+[92mINFO [0m:      	         'loss': '3.0764e+00',
+[92mINFO [0m:      	         'sub ac': '6.4417e-01',
+[92mINFO [0m:      	         'sub ls': '3.4380e+00'},
+[92mINFO [0m:      	  194: { 'accuracy': '6.7689e-01',
+[92mINFO [0m:      	         'loss': '3.0846e+00',
+[92mINFO [0m:      	         'sub ac': '6.4774e-01',
+[92mINFO [0m:      	         'sub ls': '3.4467e+00'},
+[92mINFO [0m:      	  195: { 'accuracy': '6.7406e-01',
+[92mINFO [0m:      	         'loss': '3.1101e+00',
+[92mINFO [0m:      	         'sub ac': '6.4461e-01',
+[92mINFO [0m:      	         'sub ls': '3.4517e+00'},
+[92mINFO [0m:      	  196: { 'accuracy': '6.7619e-01',
+[92mINFO [0m:      	         'loss': '3.0788e+00',
+[92mINFO [0m:      	         'sub ac': '6.4461e-01',
+[92mINFO [0m:      	         'sub ls': '3.4713e+00'},
+[92mINFO [0m:      	  197: { 'accuracy': '6.7524e-01',
+[92mINFO [0m:      	         'loss': '3.0993e+00',
+[92mINFO [0m:      	         'sub ac': '6.4461e-01',
+[92mINFO [0m:      	         'sub ls': '3.4656e+00'},
+[92mINFO [0m:      	  198: { 'accuracy': '6.7477e-01',
+[92mINFO [0m:      	         'loss': '3.1092e+00',
+[92mINFO [0m:      	         'sub ac': '6.4372e-01',
+[92mINFO [0m:      	         'sub ls': '3.4699e+00'},
+[92mINFO [0m:      	  199: { 'accuracy': '6.7784e-01',
+[92mINFO [0m:      	         'loss': '3.0983e+00',
+[92mINFO [0m:      	         'sub ac': '6.4730e-01',
+[92mINFO [0m:      	         'sub ls': '3.4526e+00'},
+[92mINFO [0m:      	  200: { 'accuracy': '6.7595e-01',
+[92mINFO [0m:      	         'loss': '3.0761e+00',
+[92mINFO [0m:      	         'sub ac': '6.4461e-01',
+[92mINFO [0m:      	         'sub ls': '3.4627e+00'}}
+[92mINFO [0m:      
+[92mINFO [0m:      
